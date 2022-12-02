@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+ 
+ }
+ :root{
+    --color-bg: #992128;
+    --color--secondary: #F8E4C7;
+ }
+ body{
+    background: var(--color-bg);
+ }
+ 
+ a{
+    text-decoration: none;
+    color: #992128;
+    font-weight: 350;
+    
+ }
+
+.login-wrapper{
+    background: #F8E4C7;
+    width: 420px;
+    max-width: 100%;
+    margin-top: 4vw;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.logo-class{
+    width: 120px;
+   position: relative;
+}
+.forgot-pass-div{
+    text-align: right;
+    padding-right: 1em;
+}
+.form-group{
+    margin-top: .5em;
+}
+.login-header{
+    font-family: 'Oswald', sans-serif;
+    color: #992128;
+}
+hr{
+    border: 1.2px solid #992128;
+    color: #992128;
+    opacity: 100%;
+
+}
+.login-div{
+    color: #992128;
+}
+.btn{
+    background:#992128;
+    border: none;
+    width: 100px;
+    border-radius: 30px;
+}
+.btn:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background:  #992128;
+}
+
+    
