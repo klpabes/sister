@@ -1,38 +1,27 @@
-<?php 
-  session_start();
-  include ('includes/db_connection.php');
+<?php
+session_start();
+include ('includes/db_connection.php');
 
-  if(!isset($_SESSION['username'])){
-    header('Location: admin_login.php');
- }
     $query_college = "SELECT * FROM college ORDER BY College_Name ASC";
+    
     $result = $conn->query($query_college); 
 
-
+    
     if(isset($_POST['save']))
     {
     $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
     $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
     $middlename = mysqli_real_escape_string($conn, $_POST['middlename']);
-    $birth = mysqli_real_escape_string($conn, $_POST['birthdate']);
-    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-    $program = mysqli_real_escape_string($conn, $_POST['program']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-    $zip = mysqli_real_escape_string($conn, $_POST['zip']);
-    $province = mysqli_real_escape_string($conn, $_POST['province']);
-    $city = mysqli_real_escape_string($conn, $_POST['city']);
-    $brgy = mysqli_real_escape_string($conn, $_POST['brgy']);
-    $purok = mysqli_real_escape_string($conn, $_POST['purok']);
-    $street = mysqli_real_escape_string($conn, $_POST['street']);
+    $college = mysqli_real_escape_string($conn, $_POST['college']);
+    $department = mysqli_real_escape_string($conn, $_POST['department']);
     $status = "Active";
 
 
-    $query = "INSERT INTO student (Student_Lastname,Student_Firstname,Student_Middlename,Student_Birthdate,Student_Gender,
-    Student_Email,Student_Password,Student_Phone,Student_Program,zip,province,city,barangay,purok,street,Status) 
-    VALUES ('$lastname','$firstname',' $middlename','$birth','$gender',' $email',md5('$password'),'$phone','$program','$zip','$province','$city','$brgy','$street','$purok','$status')";
+    $query = "INSERT INTO faculty (Faculty_Lastname,Faculty_Firstname,Faculty_Middle,
+    Faculty_Username,Faculty_Password,College,Department,Status) 
+    VALUES ('$lastname','$firstname',' $middlename','$username',md5('$password'),'$college','$department','$status')";
 
     $query_run = mysqli_query($conn, $query);
 
@@ -41,8 +30,7 @@
     }else{
       echo "Error, Something went wrong";
     }
-    }
-    
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,46 +47,103 @@
   <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
-
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
-
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
 <?php include('includes/nav.php');?>
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          
           <div class="col-sm-6">
-            <h1>Student Admission</h1>
+            <h1>List of Faculties</h1>
           </div>
           <div class="col-sm-6">
-            
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item">Student Management</li>
-              <li class="breadcrumb-item active">Student Admission</li>
+              <li class="breadcrumb-item">Faculty Management</li>
+              <li class="breadcrumb-item">Faculty List</li>
             </ol>
           </div>
         </div>
-
       </div><!-- /.container-fluid -->
     </section>
-    <!-- Main content -->
+
     <section class="content">
       <div class="container-fluid">
+
+
         <div class="row">
-          <!-- left column -->
-          <div class="col-md-12">
-            <!-- general form elements -->
+          <div class="col-12">
             <div class="card">
               <!-- /.card-header -->
-              <!-- form start -->
-              <form method="POST">
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-hover">
+                <div class="col-sm-12">
+            <div class="row">
+              <button type="button" class="btn btn-success ml-auto mb-3 mb-sm-0" data-toggle="modal" data-target="#modal-lg">
+                          Add Faculty
+                </button>
+            </div>
+            <br>
+          </div>
+                <thead>
+            <tr>
+                <th>ID No.</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+		</thead>
+        <?php 
+        $query = "SELECT * FROM faculty ";
+        $query_run = mysqli_query($conn, $query);
+        if(mysqli_num_rows($query_run) > 0)
+        {
+            foreach($query_run as $faculty){    
+        ?>
+           <tr>
+                <td><?= $faculty['Faculty_ID']; ?></td>
+                <td><?= $faculty['Faculty_Lastname']; ?></td>
+                <td><?= $faculty['Faculty_Firstname'];?></td>
+                <td><?= $faculty['Department'];?></td>
+                <td>
+                    <a href="view.php?id=<?= $faculty['Faculty_ID']; ?>" class="btn btn-primary">View</a>
+                </td>
+            </tr>
+            <?php
+            }
+        }else{
+            echo "<h5> No records found </h5>";
+        }
+    ?>
+		</table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <div class="modal fade" id="modal-lg">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Large Modal</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <form method="POST">
               <?php
                   if(isset($_SESSION['status']))
                   {
@@ -130,85 +175,15 @@
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label for="middlename">Middle Name</label>
-                    <input type="text" class="form-control" name="middlename" id="middlename" placeholder="Enter Middle Name" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                <label for="gender">Gender</label>
-                  <div class="form-group">
-                    <input type="radio" id="male " name="gender" value="Male" required>
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="Female" required>
-                    <label for="female">Female</label>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="birthdate">Date of Birth</label>
-                    <input type="date" class="form-control" name="birthdate" id="birthdate" required>
+                    <label for="middlename">Middle Initial</label>
+                    <input type="text" class="form-control" name="middlename" id="middlename" placeholder="Enter Middle Inital" required maxlength="1">
                   </div>
                 </div>
                 </div>
                 <hr>
-                <h5>Address</h5>
-                <div class = "row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="province">State/Province</label>
-                    <input type="text" class="form-control" name="province" id="province" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="zip">Zip Code</label>
-                    <input type="text" class="form-control" name="zip" id="zip" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" name="city" id="city" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="brgy">Barangay</label>
-                    <input type="text" class="form-control" name="brgy" id="brgy" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="purok">Purok/Subdivision</label>
-                    <input type="text" class="form-control" name="purok" id="purok" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="street">Street/Blk No.</label>
-                    <input type="text" class="form-control" name="street" id="street" required>
-                  </div>
-                </div>
-                </div> 
-                <hr>
-                <h5>Contact</h5>
+                <h5>College and Department Information</h5>
                 <div class = "row">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="number" class="form-control" name="phone" id="phone" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" name="email" id="email" required>
-                  </div>
-                </div>
-                </div>
-                <h5>Academic Information</h5>
-                <div class = "row">
-                <div class="col-md-4">
                   <div class="form-group">
                     <label for="college">College</label>
                     <select name="college" id="college" class="form-control" required>
@@ -226,7 +201,7 @@
                       </select>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label for="department">Department</label>
                     <select class="form-control" id="department" name="department" required>
@@ -234,15 +209,6 @@
                    </select>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="program">Program</label>
-                    <select class="form-control" id="program" name="program" required>
-                    <option>--This will update after selecting a department--</option>
-                    </select>
-                  </div>
-                </div>
-                
                 </div>
                 <hr>
                 <h5>System Generated Account</h5>
@@ -255,14 +221,15 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="password">Temporary Password</label>
+                    <label for="password">Password</label>
                     <input type="password" class="form-control" name="password" id="password">
                   </div>
                 </div> 
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
+                <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   <button type="submit" name="save" class="btn btn-primary float-right">Save</button>
                 </div>
               </form>
@@ -276,17 +243,51 @@
           </div>
           </div>
 </div>
-<!-- ./wrapper -->
-
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 <!-- jQuery -->
 <script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="../plugins/chart.js/Chart.min.js"></script>
-<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -349,3 +350,5 @@ $(function() {
   });
 });
 </script>
+</body>
+</html>

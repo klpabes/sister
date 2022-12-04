@@ -31,11 +31,11 @@ if(isset($_POST['submit'])){
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.css">
+  <link rel="stylesheet" href="../dist/css/adminlte.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -92,8 +92,8 @@ if(isset($_POST['submit'])){
                 <div class="form-group">
                 <label for="to">Announce To:</label>
                   <select name="classid" class="form-control" required='true' placeholder="To:">
-                        <option value="student">All Students</option>
-                        <option value="faculty">All Faculties</option>
+                        <option value="student">Students</option>
+                        <option value="faculty">Faculties</option>
                         <option value="public">Public</option>
                   </select>
                 </div>
@@ -131,14 +131,14 @@ if(isset($_POST['submit'])){
 
 
 
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>

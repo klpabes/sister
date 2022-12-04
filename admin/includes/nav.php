@@ -109,7 +109,7 @@
           </li>
           <li class="nav-header">FACULTY MANAGEMENT</li>
           <li class="nav-item">
-            <a href="../calendar.html" class="nav-link">
+            <a href="faculty_list.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>Faculties</p>
             </a>
