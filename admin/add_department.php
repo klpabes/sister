@@ -11,9 +11,9 @@ include ('includes/db_connection.php');
     {
     $id = mysqli_real_escape_string($conn, $_POST['id']);
     $department_name =  mysqli_real_escape_string($conn, $_POST['department_name']);
-    $college = mysqli_real_escape_string($conn, $_POST['college']);
-
-    $query = "INSERT INTO department (Faculty_Lastname,Faculty_Firstname,Faculty_Middle,
+    $depa = mysqli_real_escape_string($conn, $_POST['department_name']);
+    $department_college = mysqli_real_escape_string($conn, $_POST['college']);
+    $query = "INSERT INTO department (,Faculty_Firstname,Faculty_Middle,
     Faculty_Username,Faculty_Password,College,Department,Status) 
     VALUES ('$lastname','$firstname',' $middlename','$username',md5('$password'),'$college','$department','$status')";
 

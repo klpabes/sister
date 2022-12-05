@@ -17,6 +17,7 @@
     $birth = mysqli_real_escape_string($conn, $_POST['birthdate']);
     $gender = mysqli_real_escape_string($conn, $_POST['gender']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $program = mysqli_real_escape_string($conn, $_POST['program']);
@@ -31,8 +32,8 @@
 
 
     $query = "INSERT INTO student (Student_Lastname,Student_Firstname,Student_Middlename,Student_Birthdate,Student_Gender,
-    Student_Email,Student_Password,Student_Phone,Student_Program,zip,province,city,barangay,purok,street,Status) 
-    VALUES ('$lastname','$firstname',' $middlename','$birth','$gender',' $email',md5('$password'),'$phone','$program','$zip','$province','$city','$brgy','$street','$purok','$status')";
+    Student_Email,Student_Username,Student_Password,Student_Phone,Student_Program,zip,province,city,barangay,purok,street,Status) 
+    VALUES ('$lastname','$firstname',' $middlename','$birth','$gender',' $email','$username',md5('$password'),'$phone','$program','$zip','$province','$city','$brgy','$street','$purok','$status')";
 
     $query_run = mysqli_query($conn, $query);
 
@@ -196,7 +197,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="number" class="form-control" name="phone" id="phone" required>
+                    <input type="number" class="form-control" name="phone" id="phone" required maxlength="11">
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -211,21 +212,20 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="college">College</label>
-                    <select name="college" id="college" class="form-control" required>
-                    <option>Select College</option>
-                    <?php 
-                      if($result->num_rows > 0){ 
-                          while($row = $result->fetch_assoc()){  
-                              echo '<option value="'.$row['College_ID'].'">'.$row['College_Name'].'</option>'; 
+                      <select name="college" id="college" class="form-control" required>
+                        <option>Select College</option>
+                        <?php 
+                          if($result->num_rows > 0){ 
+                              while($row = $result->fetch_assoc()){  
+                                  echo '<option value="'.$row['College_ID'].'">'.$row['College_Name'].'</option>'; 
+                              } 
+                          }else{ 
+                              echo '<option value="">College not available</option>'; 
                           } 
-                      }else{ 
-                          echo '<option value="">College not available</option>'; 
-                      } 
-                    ?>
-
+                        ?>
                       </select>
+                    </div>
                   </div>
-                </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="department">Department</label>
@@ -325,6 +325,7 @@ $(document).ready(function(){
     });
 });
 </script>
+
 <!--Username Generator-->
 <script>
 $(function() {

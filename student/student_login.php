@@ -12,13 +12,14 @@ if (isset($_POST['login'])) {
   $username = mysqli_real_escape_string($conn, $_POST['username']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-$result = mysqli_query($conn, "SELECT * FROM `student` WHERE Student_Email = '" . $username. "' and Student_Password = '" . md5($password). "'");
+$result = mysqli_query($conn, "SELECT * FROM `student` WHERE Student_Username = '" . $username. "' and Student_Password = '" . md5($password). "'");
 if(!empty($result)){
   if ($row = mysqli_fetch_array($result)) {
   $_SESSION['Student_ID'] = $row['Student_ID']; 
   $_SESSION['username'] = $row['Student_Email'];
   $_SESSION['firstname'] = $row['Student_Firstname'];
   $_SESSION['lastname'] = $row['Student_Lastname'];
+  $_SESSION['program'] = $row['Student_Program'];
   header("Location: student_home.php");
   }else{
     $username_error = 'Please enter your username';
