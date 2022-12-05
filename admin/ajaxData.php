@@ -6,9 +6,7 @@ include_once 'includes/db_connection.php';
 if(!empty($_POST["College_ID"])){ 
     // Fetch department data based on the specific college 
     $query = "SELECT * FROM department WHERE College_ID = ".$_POST['College_ID'].""; 
-    $query= "SELECT department.College_ID, college.College_Name
-FROM department
-INNER JOIN college ON department.College_ID = department.College_Name";
+
 
     $result = $conn->query($query); 
     // Generate HTML of department options list 

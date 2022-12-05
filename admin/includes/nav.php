@@ -116,59 +116,14 @@
           </li>
           <li class="nav-header">COLLEGE & DEPT. MANAGEMENT</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="colleges.php" class="nav-link">
               <i class="nav-icon fas fa-building"></i>
               <p>
                 Colleges
-                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>CCS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>CSM</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>COET</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>CEBA</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>CON</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>CED</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/top-nav.html" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>CASS</p>
-                </a>
-              </li>
-            </ul>
           </li>
-          <li class="nav-header">PROGRAM & SUBJ. MANAGEMENT</li>
+          <li class="nav-header">PROGRAM & COURSE MANAGEMENT</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-certificate"></i>
