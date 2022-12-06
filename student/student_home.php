@@ -30,6 +30,11 @@
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="../dist/img/logo.png" alt="SISTERLogo" height="300" width="300">
+  </div>
+
 <body  class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed ">
 <div class="wrapper">
   <?php include('includes/student_nav.php');?>

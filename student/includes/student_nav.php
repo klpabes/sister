@@ -48,8 +48,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar main-sidebar-custom sidebar-dark-danger elevation-4">
     <!-- Brand Logo -->
-    <a href="dashboard.php" class="brand-link">
-      <img src="../dist/img/logo.png" alt="SISTERLogo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="student_home.php" class="brand-link">
+      <img src="../dist/img/logo.png" alt="SISTERLogo" class="brand-image">
       <span class="brand-text font-weight-light"><b>SISTER</b></span>
     </a>
 
@@ -94,19 +94,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="cor.php" class="nav-link">
+                <a href="grades.php" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>Grade Evaluation</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="cor.php" class="nav-link">
+                <a href="inc.php" class="nav-link">
                 <i class="nav-icon fas fa-exclamation-circle"></i>
                 <p>INC Grades</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="cor.php" class="nav-link">
+                <a href="schedule.php" class="nav-link">
                 <i class="nav-icon fas fa-calendar"></i>
                 <p>Schedule</p>
                 </a>
@@ -125,7 +125,7 @@
             </li>
             </ul>
             <li class="nav-item">
-                <a href="cor.php" class="nav-link">
+                <a href="profile.php" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>Profile</p>
                 </a>
