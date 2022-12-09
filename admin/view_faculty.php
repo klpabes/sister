@@ -71,12 +71,14 @@ if(isset($_POST['delete'])){
                        src="../dist/img/user4-128x128.jpg"
                        alt="User profile picture">
                 </div>
-                <h3 class="text-red"><?php echo $result['Faculty_Firstname']; ?> <?php echo $result['Faculty_Middle']; ?>. <?php echo $result['Faculty_Lastname']; ?></h3>
-                <p class="text-red"> <?php echo $result['Department'];?></p>
+                <br>
+                <h4 class="text-white"><i class="fas fa-user"></i> <?php echo $result['Faculty_Firstname']; ?> <?php echo $result['Faculty_Middle']; ?>. <?php echo $result['Faculty_Lastname']; ?></h4>
+                <h4 class="text-white"><i class="fas fa-map-marker"></i> <?php echo $result['Department'];?> Department</h4>
               </div>
               <!-- /.card-body -->
-            </div>
+            </div>  
           </div>
+          
           <!-- /.col -->
           <div class="col-md-12">
             <div class="card">

@@ -38,7 +38,6 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Welcome to SISTER!</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -48,17 +47,66 @@
             </div>
           </div>
         </div>
-      </section>
-        
+        </section>
+      <section class="content">
+      <div class="container">
+        <div class="row">
+      <div class="col-md-4">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>Admit Student</h3>
+                <p></p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <a href="admission.php" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>Admit Student</h3>
+                <p></p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
 
-
-
-
-
-
-
+        <div class="col-md-4">
+        <div class="card card-row card-danger">
+          <div class="card-header">
+            <h3 class="card-title">
+            <i class="fas fa-scroll"></i> Announcements
+            </h3>
+          </div>
+          <div class="card-body">
+            <div class="card card-info card-outline">
+              <div class="card-header">
+                <h5 class="card-title"><!--announcement title--></h5>
+                <div class="card-tools">
+                  <a href="#" class="btn btn-tool btn-link">#<!--announcement id--></a>
+                  <a href="#" class="btn btn-tool"><!--announcement link-->
+                    <i class="fas fa-pen"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+               <!--announcement body/paragraph-->
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
   </div>
-</div>
 
 <script src="../plugins/jquery/jquery.min.js"></script>
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
