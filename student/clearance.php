@@ -2,10 +2,12 @@
   session_start();
   include ('includes/db_connection.php');
 
-  $query = mysqli_query($conn, "SELECT * FROM announcements LIMIT 30");
+  $student_id = $_SESSION['Student_ID'];
+  $query = mysqli_query($conn, "SELECT * FROM student WHERE Student_ID='$student_id'");
   $result= mysqli_fetch_array($query);
+
   if(!isset($_SESSION['username'])){
-    header('Location: logout.php');
+    header('Location: student_login.php');
 
  }
  
@@ -15,7 +17,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SISTER | Admin Dashboard</title>
+  <title>SISTER</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -30,26 +32,45 @@
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed" style="background:url('dist/img/body-bg.jpg') ;">
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="../dist/img/logo.png" alt="SISTERLogo" height="300" width="300">
+  </div>
+
+<body  class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed ">
 <div class="wrapper">
-  <?php include('includes/nav.php');?>
-    <div class="content-wrapper">
-      <section class="content-header">
+  <?php include('includes/student_nav.php');?>
+  <div class="content-wrapper">
+  <section class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Welcome to SISTER!</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item active"><a href="dashboard.php">Home</a></li>
-                <li class="breadcrumb-item active">Dashboard</li>
+                <li class="breadcrumb-item active">Dashboard</a></li>
+                <li class="breadcrumb-item active">Clearance</li>
               </ol>
             </div>
           </div>
         </div>
       </section>
-        
+        <!-- Main content -->
+        <section class="content">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Status: <span class="text-green">Cleared</span> </h3>
+              <span class="text float-right"><a href="clearance-archive.php">History</a></span>
+            </div>
+            <div class="card-body">
+                            <h2 class="text-center text-green"><i class="fa fa-check-square-o"></i> Hooray! You have no liabilities!</h2>              <!-- PHP Foreach loop here-->
+                            <div class="row">
+                              </div>
+                            <!-- END PHP Foreach loop here-->
+            </div>
+          </div>
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
 
 
 
@@ -57,9 +78,7 @@
 
 
 
-  </div>
 </div>
-
 <script src="../plugins/jquery/jquery.min.js"></script>
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../plugins/chart.js/Chart.min.js"></script>

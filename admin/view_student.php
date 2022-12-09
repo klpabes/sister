@@ -48,138 +48,285 @@ $result= mysqli_fetch_array($query);
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-4">
-            <div class="card card-primary card-outline">
+          <div class="col-md-3">
+            <!-- Profile Image -->
+            <div class="card card-danger card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"src="dist/img/user4-128x128.jpg" alt="User profile picture">
+                  <img class="profile-user-img img-fluid img-square"
+                       src="../dist/img/user4-128x128.jpg"
+                       alt="User profile picture">
                 </div>
-                <h3 class="profile-username text-center"><?php echo $result['Student_Lastname']; ?>, <?php echo $result['Student_Firstname'];?></h3>
-                <p class="text-muted text-center"><?php echo $result['Student_Program']; ?></p>
+                <h3 class="profile-username text-center"><?php echo $result['Student_Firstname']; ?> <?php echo $result['Student_Middlename']; ?>. <?php echo $result['Student_Lastname']; ?></h3>
+                <p class="text-muted text-center"><?php echo $result['Student_Year_Level'];?> <?php echo $result['Student_Program'];?></p>
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Student ID</b><div class="float-right"><?php echo $result['Student_ID']; ?></div>
+                    <b>Previous GPA</b> <a class="float-right"></a>
                   </li>
                   <li class="list-group-item">
-                    <b>CGPA</b><div class="float-right"><?php echo $result['cgpa']; ?></div>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Year Level</b><div class="float-right"><?php echo $result['Student_Year_Level']; ?></div>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Scholastic Status</b><div class="float-right"><?php echo $result['Scholastic_Status']; ?></div>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Scholarship Status</b><div class="float-right"><?php echo $result['Scholarship_Status']; ?></div>
+                    <b>Cumulative GPA</b> <a class="float-right"></a>
                   </li>
                 </ul>
               </div>
+              <!-- /.card-body -->
             </div>
+            <!-- /.card -->
+
+            <!-- About Me Box -->
+            <div class="card card-danger">
+              <div class="card-header">
+                <h3 class="card-title">Contact Information</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Address</strong>
+                <p class="text-muted"><?php echo $result['street'];?> <?php echo $result['barangay'];?>, 
+                <?php echo $result['city'];?>, <?php echo $result['province'];?> <?php echo $result['zip']; ?></p>
+                <hr>
+                <strong><i class="fas fa-phone mr-1"></i> Phone</strong>
+                <p class="text-muted"><?php echo $result['Student_Phone'];?></p>
+                <hr>
+                <strong><i class="fas fa-at mr-1"></i>Email</strong>
+                <p class="text-muted"><?php echo $result['Student_Email'];?></p>
+              </div>
+              <!-- /.card-body -->
             </div>
-          <div class="col-md-8">
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
             <div class="card">
               <div class="card-header p-2">
-                  <h5>Student Information</h5>
-              </div>
+                <ul class="nav nav-pills">
+                  <li class="nav-item"><a class="nav-link" href="#student_data" data-toggle="tab">Student Data</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                </ul>
+              </div><!-- /.card-header -->
               <div class="card-body">
-                <div class = "row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="lastname">Last Name</label>
-                    <h4><?php echo $result['Student_Lastname']; ?></h5>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="firstname">First Name</label>
-                    <h4><?php echo $result['Student_Firstname']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="middlename">Middle Name</label>
-                    <h4><?php echo $result['Student_Middlename']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                <label for="gender">Gender</label>  
-                  <div class="form-group">
-                    <h4><?php echo $result['Student_Gender']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="birthdate">Date of Birth</label>
-                    <h4><?php echo $result['Student_Birthdate']; ?></h4>
-                  </div>
-                </div>
-                </div>
-                <hr>
-                <h5>Address</h5>
-                <div class = "row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="province">State/Province</label>
-                    <h4><?php echo $result['province']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="zip">Zip Code</label>
-                    <h4><?php echo $result['zip']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="city">City</label>
-                    <h4><?php echo $result['city']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="brgy">Barangay</label>
-                    <h4><?php echo $result['barangay']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="purok">Purok/Subdivision</label>
-                    <h4><?php echo $result['purok']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="street">Street/Blk No.</label>
-                    <h4><?php echo $result['street']; ?></h4>
-                  </div>
-                </div>
-                </div> 
-                <hr>
-                <h5>Contact</h5>
-                <div class = "row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <h4><?php echo $result['Student_Phone']; ?></h4>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <h4><?php echo $result['Student_Email']; ?></h4>
-                  </div>
-                </div>
-            </div>
-        </div>
-            
-              </div><!-- /.card-body -->
-     
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                <div class="tab-content">
+                  <div class="active tab-pane" id="student_data">
+                    <div class="card-body">
+                        <div class = "row">
+                            <div class="col-md-12">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                    <i class="fas fa-user"></i>
+                                    Personal Information
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <dt class="col-sm-8">ID Number</dt>
+                                    <dd class="col-sm-8"><?php echo $result['Student_ID'];?></dd>
+                                    <dt class="col-sm-4">Last Enrolled</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Gender</dt>
+                                    <dd class="col-sm-8"><?php echo $result['Student_Gender'];?></dd>
+                                    <dt class="col-sm-4">Civil Status</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Citizenship</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Religion</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Ethnic Group</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Date of Birth</dt>
+                                    <dd class="col-sm-8"><?php echo $result['Student_Birthdate'];?></dd>
+                                    <dt class="col-sm-4">Name of Father</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    <dt class="col-sm-4">Name of Mother</dt>
+                                    <dd class="col-sm-8"></dd>
+                                    </dl>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                  <!-- /.tab-pane -->
+                  <div class="tab-pane" id="timeline">
+                    <!-- The timeline -->
+                    <div class="timeline timeline-inverse">
+                      <!-- timeline time label -->
+                      <div class="time-label">
+                        <span class="bg-danger">
+                          10 Feb. 2014
+                        </span>
+                      </div>
+                      <!-- /.timeline-label -->
+                      <!-- timeline item -->
+                      <div>
+                        <i class="fas fa-envelope bg-primary"></i>
 
+                        <div class="timeline-item">
+                          <span class="time"><i class="far fa-clock"></i> 12:05</span>
+
+                          <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+
+                          <div class="timeline-body">
+                            Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
+                            weebly ning heekya handango imeem plugg dopplr jibjab, movity
+                            jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
+                            quora plaxo ideeli hulu weebly balihoo...
+                          </div>
+                          <div class="timeline-footer">
+                            <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- END timeline item -->
+                      <!-- timeline item -->
+                      <div>
+                        <i class="fas fa-user bg-info"></i>
+
+                        <div class="timeline-item">
+                          <span class="time"><i class="far fa-clock"></i> 5 mins ago</span>
+
+                          <h3 class="timeline-header border-0"><a href="#">Sarah Young</a> accepted your friend request
+                          </h3>
+                        </div>
+                      </div>
+                      <!-- END timeline item -->
+                      <!-- timeline item -->
+                      <div>
+                        <i class="fas fa-comments bg-warning"></i>
+
+                        <div class="timeline-item">
+                          <span class="time"><i class="far fa-clock"></i> 27 mins ago</span>
+
+                          <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+
+                          <div class="timeline-body">
+                            Take me to your leader!
+                            Switzerland is small and neutral!
+                            We are more like Germany, ambitious and misunderstood!
+                          </div>
+                          <div class="timeline-footer">
+                            <a href="#" class="btn btn-warning btn-flat btn-sm">View comment</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- END timeline item -->
+                      <!-- timeline time label -->
+                      <div class="time-label">
+                        <span class="bg-success">
+                          3 Jan. 2014
+                        </span>
+                      </div>
+                      <!-- /.timeline-label -->
+                      <!-- timeline item -->
+                      <div>
+                        <i class="fas fa-camera bg-purple"></i>
+
+                        <div class="timeline-item">
+                          <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
+
+                          <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
+
+                          <div class="timeline-body">
+                            <img src="https://placehold.it/150x100" alt="...">
+                            <img src="https://placehold.it/150x100" alt="...">
+                            <img src="https://placehold.it/150x100" alt="...">
+                            <img src="https://placehold.it/150x100" alt="...">
+                          </div>
+                        </div>
+                      </div>
+                      <!-- END timeline item -->
+                      <div>
+                        <i class="far fa-clock bg-gray"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.tab-pane -->
+
+                  <div class="tab-pane" id="settings">
+                  <section class="content">
+                <!-- Your Page Content Here -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Student Mobile Phone Number</h3>
+                            </div>
+                            <form name="frm-update-contactno" id="frm-update-contactno" method="post" action="" role="form">
+                                <div class="box-body">
+                                                                                                            <div class="form-group">
+                                        <input name="contactno" class="form-control" id="contactno" value="" type="text" size="15" maxlength="11" placeholder="Mobile Phone Number">
+                                        <input name="contactno_old" type="hidden" value="">
+                                    </div>
+                                                                                                            <input name="btnUpdate3" type="submit" id="btnUpdate3" class="btn btn-primary" value="Update" onclick="this.disabled=true; hidden3.name=this.name; hidden3.value=this.value; this.value='Saving... Please wait...'; return validate_contact_form(this);"/>
+                                    <input type="button" name="btnCancel" class="btn btn-default" value="Cancel" onclick="javascript:history.back();"/>
+                                                                        <input name="hidden3" type="hidden" id="hidden3" value="None"/>
+                                </div><!-- /.box-body -->   
+                            </form>
+                            <hr>
+                        </div>
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Change Password</h3>
+                            </div><!-- /.box-header -->
+                            <!-- form start -->
+                            <form name="update-password" method="post" action="settings.php" role="form">
+                                <div class="box-body">
+                                                                                                            <div class="form-group">
+                                        <label for="password">Old Password <span class="text-red">*</span></label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Old Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password2">New Password <span class="text-red">*</span></label>
+                                        <input type="password" class="form-control" name="password2" id="password2" placeholder="New Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password3">Retype New Password <span class="text-red">*</span></label>
+                                        <input type="password" class="form-control" name="password3" id="password3" placeholder="Retype New Password">
+                                    </div>
+                                    <input name="btnUpdate" type="submit" id="btnUpdate" class="btn btn-primary" value="Update Password" onclick="this.disabled=true; hidden1.name=this.name; hidden1.value=this.value; this.value='Saving... Please wait...'; this.form.submit();"/>
+                                    <input type="button" name="btnCancel" class="btn btn-default" value="Cancel" onclick="javascript:history.back();"/>
+                                    <input name="hidden1" type="hidden" id="hidden1" value="None"/>
+                                </div><!-- /.box-body -->
+                            </form>
+                        </div>
+                        <hr>
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Password Recovery Email</h3>
+                            </div><!-- /.box-header -->
+                            <!-- form start -->
+                            <form name="pass-recovery" method="post" action="settings.php" role="form">
+                                <div class="box-body">
+                                        <div class="form-group">
+                                        <label>Password <span class="text-red">*</span></label>
+                                        <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>New Recovery Email <span class="text-red">*</span></label>
+                                        <input name="recovery_email" id="recovery_email" class="form-control" value="penalescjay@gmail.com" type="text" maxlength="50">
+                                    </div>
+                                    <input name="btnUpdate2" type="submit" id="btnUpdate2" class="btn btn-primary" value="Update" onclick="this.disabled=true; hidden2.name=this.name; hidden2.value=this.value; this.value='Saving... Please wait...'; this.form.submit();"/>
+                                    <input type="button" name="btnCancel" class="btn btn-default" value="Cancel" onclick="javascript:history.back();"/>
+                                    <input name="hidden2" type="hidden" id="hidden2" value="None"/>
+                                </div><!-- /.box-body -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                  </div>
+                  <!-- /.tab-pane -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+</div>
+</div>
 
 
 

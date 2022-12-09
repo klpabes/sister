@@ -80,12 +80,12 @@ $faculty_id = $_GET['id'];
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>List of Faculties</h1>
+            <h4>List of Programs</h4>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item">Faculty Management</li>
-              <li class="breadcrumb-item">Faculty List</li>
+              <li class="breadcrumb-item">Program Management</li>
+              <li class="breadcrumb-item">Programs List</li>
             </ol>
           </div>
         </div>
@@ -116,7 +116,7 @@ $faculty_id = $_GET['id'];
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-hover table-striped">
                 <button type="button" class="btn btn-success ml-auto mb-5 mb-sm-0" data-toggle="modal" data-target="#modal-lg">
-                          Add Faculty
+                          Add Programs
                 </button>
                 <div class="col-sm-12">
             </div>
@@ -124,28 +124,28 @@ $faculty_id = $_GET['id'];
           </div>
                 <thead>
                   <tr>
-                      <th>ID No.</th>
-                      <th>Last Name</th>
-                      <th>First Name</th>
-                      <th>Department</th>
-                      <th>Action</th>
+                      <th>Program Name</th>
+                      <th>Program Slots</th>
+                      <th>Program Units</th>
+                      <th>Offered by</th>
+                      <th>View</th>
                   </tr>
 		</thead>
     <tbody>
         <?php 
-        $query = "SELECT * FROM faculty ";
+        $query = "SELECT * FROM program ";
         $query_run = mysqli_query($conn, $query);
         if(mysqli_num_rows($query_run) > 0)
         {
-            foreach($query_run as $faculty){    
+            foreach($query_run as $program){    
         ?>
            <tr>
-                <td><?= $faculty['Faculty_ID']; ?></td>
-                <td><?= $faculty['Faculty_Lastname']; ?></td>
-                <td><?= $faculty['Faculty_Firstname'];?></td>
-                <td><?= $faculty['Department'];?></td>
+                <td><?= $program['Program_Name']; ?></td>
+                <td><?= $program['Slots']; ?></td>
+                <td><?= $program[''];?></td>
+                <td><?= $program['Department_ID'];?></td>
                 <td>
-                    <a href="view_faculty.php?id=<?= $faculty['Faculty_ID']; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                    <a href="view_faculty.php?id=<?= $program['Faculty_ID']; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                 </td>
             </tr>
             <?php

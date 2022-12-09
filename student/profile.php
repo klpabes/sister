@@ -63,7 +63,7 @@
             <div class="card card-danger card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"
+                  <img class="profile-user-img img-fluid img-square"
                        src="../dist/img/user4-128x128.jpg"
                        alt="User profile picture">
                 </div>
@@ -96,7 +96,7 @@
                 <strong><i class="fas fa-phone mr-1"></i> Phone</strong>
                 <p class="text-muted"><?php echo $result['Student_Phone'];?></p>
                 <hr>
-                <strong><i class="far fa-file-alt mr-1"></i>Email</strong>
+                <strong><i class="fas fa-at mr-1"></i>Email</strong>
                 <p class="text-muted"><?php echo $result['Student_Email'];?></p>
               </div>
               <!-- /.card-body -->

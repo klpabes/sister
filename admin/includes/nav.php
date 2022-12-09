@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-light navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -71,37 +71,22 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
+          <li class="nav-item active">
             <a href="dashboard.php" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-header">STUDENT MANAGEMENT</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item active">
+            <a href="student_list.php" class="nav-link">
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Students
-                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="student_list.php" class="nav-link">
-                  <i class="fas fa-circle nav-icon"></i>
-                  <p>Enrolled Students</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="archived_list.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Archived Students</p>
-                </a>
-             </li>
-            </ul>
             <li class="nav-item">
-                <a href="add_student.php" class="nav-link">
+                <a href="admission.php" class="nav-link">
                   <i class="fa fa-user-plus nav-icon"></i>
                   <p>Student Admission</p>
                 </a>
@@ -125,7 +110,7 @@
           </li>
           <li class="nav-header">PROGRAM & COURSE MANAGEMENT</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="programs.php" class="nav-link">
                 <i class="nav-icon fas fa-certificate"></i>
                 <p>Programs</p>
             </a> 

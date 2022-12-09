@@ -77,7 +77,7 @@
                                 <option value="cor.php?sy=2021-2022&sem=1">2021-2022</option>
                             </select>
                         </li>
-                        <li class="page-item"><span>School Year:</span>   <span>Semester:</span>
+                        <li class="page-item"><span>Semester:</span>
                             <select name="sem" id="sem" class="sem form-control">
                             <option value="cor.php?sy=2022-2023&sem=1" selected>1</option>
                             <option value="cor.php?sy=2022-2023&sem=2">2</option>
@@ -313,6 +313,7 @@
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 </div>
+
 <script src="../plugins/jquery/jquery.min.js"></script>
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../plugins/chart.js/Chart.min.js"></script>

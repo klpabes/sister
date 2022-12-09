@@ -1,21 +1,9 @@
 <?php
 session_start();
 include ('includes/db_connection.php');
-$status='Inactive';
-if(isset($_POST['archive']))
-{
-    $student_id = mysqli_real_escape_string($conn, $_POST['archive']);
+if(!isset($_SESSION['username'])){
+  header('Location: logout.php');
 
-    $query = "UPDATE student SET Status='$status' WHERE Student_ID='$student_id'";
-    $query_run = mysqli_query($conn, $query);
-
-    if($query_run){
-        $added = "Student archived!";
-        header('student_list.php');
-        }else{
-        $not_added = "Error, Student not archived!";
-        header('student_list.php');
-      }
 }
 
 ?>
@@ -50,7 +38,7 @@ if(isset($_POST['archive']))
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>List of Enrolled Students</h1>
+            <h1>List of Students</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -75,14 +63,15 @@ if(isset($_POST['archive']))
                 <th>ID No.</th>
                 <th>Last Name</th>
                 <th>First Name</th>
-                <th>Program</th>
+                <th>Enrolled Program</th>
                 <th>Year Level</th>
-                <th>Date of Registration</th>
-                <th>Action</th>
+                <th>Date of Admission</th>
+                <th>Status</th>
+                <th>View</th>
             </tr>
 		</thead>
         <?php 
-        $query = "SELECT * FROM student WHERE Status='Active'";
+        $query = "SELECT * FROM student";
         $query_run = mysqli_query($conn, $query);
         if(mysqli_num_rows($query_run) > 0)
         {
@@ -94,10 +83,10 @@ if(isset($_POST['archive']))
                 <td><?= $student['Student_Firstname'];?></td>
                 <td><?= $student['Student_Program'];?></td>
                 <td><?= $student['Student_Year_Level']; ?></td>
-                <td><?= $student['Registered_On']; ?></td>
+                <td><?= $student['Admission_Date']; ?></td>
+                <td><?= $student['Status']; ?></td>
                 <td>
-                    <a href="view_student.php?id=<?= $student['Student_ID']; ?>" class="btn btn-primary">View</a>
-                    <a href="delete_student.php?id=<?= $student['Student_ID']; ?>" class="btn btn-danger">Archive</a>
+                    <a href="view_student.php?id=<?= $student['Student_ID']; ?>" class="btn btn-primary"><i class="fas fa-eye mr-2"></i></a>
                 </td>
             </tr>
             <?php
@@ -107,8 +96,6 @@ if(isset($_POST['archive']))
         }
     ?>
 		</table>
-
-
 
 <!-- jQuery -->
 <script src="../plugins/jquery/jquery.min.js"></script>
@@ -128,7 +115,7 @@ if(isset($_POST['archive']))
 <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- Page specific script -->
 <script>

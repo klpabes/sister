@@ -76,7 +76,7 @@
                 <a href="student_home.php" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>Home</p>
-                </a>
+                </a>  
             </li>
             <li class="nav-item">
             <a href="#" class="nav-link">
@@ -112,7 +112,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="cor.php" class="nav-link">
+                <a href="attendance.php" class="nav-link">
+                <i class="nav-icon fas fa-calendar-check"></i>
+                <p>Attendance</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="clearance.php" class="nav-link">
                 <i class="nav-icon fas fa-check-circle"></i>
                 <p>Clearance</p>
                 </a>
