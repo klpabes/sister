@@ -53,7 +53,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SISTER | Admin Dashboard</title>
+  <title>SISTER</title>
   <!--Favicon-->
   <link rel="icon" type="image/x-icon" href="../dist/img/logo.png">
   <!-- Google Font: Source Sans Pro -->
@@ -77,12 +77,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Student Admission</h1>
+              <h1>Student Advising</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item">Student Management</li>
-                <li class="breadcrumb-item active">Student Admission</li>
+                <li class="breadcrumb-item active">Student Advising</li>
               </ol>
             </div>
           </div>

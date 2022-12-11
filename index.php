@@ -24,7 +24,7 @@ include('includes/db_connection.php');
 div.transbox {
   margin: 60px;
   background-color: #777;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 div.transbox p {
@@ -100,12 +100,12 @@ div.transbox p {
       <div class="swiper-slide slide" style="background:url(images/explore.jpg) no-repeat">
          <div class="content">
   
-              <div class="transbox">
+             
              <span>Mindanao State University - Iligan Institute of Technology</span>
 
             <h3>explore</h3>
 
-            </div>
+            
 
          </div>
       </div>
@@ -136,7 +136,7 @@ div.transbox p {
 
 <!-- home section ends -->
 
-<!-- services section starts  -->
+<!-- section starts  -->
 
 <section class="services">
 
@@ -184,10 +184,10 @@ div.transbox p {
 
 </section>
 
-<!-- services section ends -->
+<!-- section ends -->
 
 
-<!-- home packages section starts  -->
+<!-- section starts  -->
 
 <section class="home-packages">
 
@@ -202,7 +202,7 @@ div.transbox p {
       <div class="content">
          <h3>CCS</h3>
          <p>College of Computer Studies</p>
-         <a href="ccs.php" class="btn">Learn More</a>
+         <a href="colleges/ccs.php" class="btn">Learn More</a>
       </div>
    </div>
 
@@ -213,7 +213,7 @@ div.transbox p {
       <div class="content">
          <h3>CSM</h3>
          <p>College of Science and Mathematics</p>
-         <a href="csm.php" class="btn">Learn More</a>
+         <a href="colleges/csm.php" class="btn">Learn More</a>
       </div>
    </div>
    
@@ -225,7 +225,7 @@ div.transbox p {
          <h3>CED</h3>
          <p>College of Education</p>
          <br></br>
-         <a href="ced.php" class="btn">Learn More</a>
+         <a href="colleges/ced.php" class="btn">Learn More</a>
       </div>
    </div>
    <div class="box">
@@ -235,7 +235,7 @@ div.transbox p {
       <div class="content">
          <h3>CASS</h3>
          <p>College of Arts and Social Sciences</p>
-         <a href="cass.php" class="btn">Learn More</a>
+         <a href="colleges/cass.php" class="btn">Learn More</a>
       </div>
    </div>
    <div class="box">
@@ -247,7 +247,7 @@ div.transbox p {
          <p>College of Nursing</p>
          <br></br>
          <br></br>
-         <a href="con.php" class="btn">Learn More</a>
+         <a href="colleges/cons.php" class="btn">Learn More</a>
       </div>
    </div>
    <div class="box">
@@ -257,7 +257,8 @@ div.transbox p {
       <div class="content">
          <h3>CEBA</h3>
          <p>College of Economics, Business and Accountancy</p>
-         <a href="ceba.php" class="btn">Learn More</a>
+         <br></br>
+         <a href="colleges/ceba.php" class="btn">Learn More</a>
       </div>
    </div>
    <div class="box">
@@ -267,7 +268,8 @@ div.transbox p {
       <div class="content">
          <h3>COET</h3>
          <p>College of Engineering and Technology</p>
-         <a href="coet.php" class="btn">Learn More</a>
+         <br></br>
+         <a href="colleges/coet.php" class="btn">Learn More</a>
       </div>
    </div>
    <!-- <div class="box">
@@ -285,7 +287,7 @@ div.transbox p {
 
 </section>
 
-<!-- home packages section ends -->
+<!-- section ends -->
 
 <!-- home about section starts  -->
 
@@ -299,7 +301,7 @@ div.transbox p {
    <h3>about us</h3>
    <p>SISTER is a Website Project in ITE 183 - Web Systems and Application. The aim of this project is to design and develop a web-based school management system that will integrate the admission, registration, and evaluation modules in accordance with the students and faculty information (i.e., clearance, advising, assessment in enrolment, etc.) presented in the school system. 
 </p>
-   <a href="about.php" class="btn">read more</a>
+   <a href="aboutus.php" class="btn">read more</a>
 </div>
 
 </section>
@@ -335,16 +337,16 @@ div.transbox p {
 
    <div class="box">
       <h3>quick links</h3>
-      <a href="home.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
+      <a href="../sister-main/index.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
       <a href="about.php"> <i class="fas fa-angle-right"></i> Sign - up</a>
-      <a href="package.php"> <i class="fas fa-angle-right"></i> Student Login</a>
-      <a href="book.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
+      <a href="../sister-main/student/student_login.php"> <i class="fas fa-angle-right"></i> Student Login</a>
+      <a href="../sister-main/admin/admin_login.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
    </div>
 
    <div class="box">
       <h3>extra links</h3>
       <a href="#"> <i class="fas fa-angle-right"></i> FAQs</a>
-      <a href="#"> <i class="fas fa-angle-right"></i> about us</a>
+      <a href="aboutus.php"> <i class="fas fa-angle-right"></i> about us</a>
       <a href="#"> <i class="fas fa-angle-right"></i> privacy policy</a>
       <a href="#"> <i class="fas fa-angle-right"></i> terms of use</a>
    </div>

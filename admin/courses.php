@@ -80,12 +80,12 @@ $faculty_id = $_GET['id'];
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h4>List of Programs</h4>
+            <h4>List of Courses</h4>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item">Program Management</li>
-              <li class="breadcrumb-item">Programs List</li>
+              <li class="breadcrumb-item">Course Management</li>
+              <li class="breadcrumb-item">Course List</li>
             </ol>
           </div>
         </div>
@@ -116,7 +116,7 @@ $faculty_id = $_GET['id'];
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-hover table-striped">
                 <button type="button" class="btn btn-success ml-auto mb-5 mb-sm-0" data-toggle="modal" data-target="#modal-lg">
-                          Add Programs
+                          Add Course
                 </button>
                 <div class="col-sm-12">
             </div>
@@ -124,30 +124,30 @@ $faculty_id = $_GET['id'];
           </div>
                 <thead>
                   <tr>
-                      <th>Program Name</th>
-                      <th>Program Slots</th>
-                      <th>Offered by</th>
-                      <th>College</th>
+                      <th>Course Code</th>
+                      <th>Course Name</th>
+                      <th>Course Prerequisite</th>
+                      <th>Course Slots</th>
+                      <th>Course Credits/Units</th>
                       <th>View</th>
                   </tr>
 		</thead>
     <tbody>
         <?php 
-        $query = "SELECT program.Program_ID, program.Department_ID, program.Program_Name, program.Slots, department.Department_ID, department.Department_Name, department.College_Name
-        FROM program  
-        JOIN department ON program.Department_ID=department.Department_ID";
+        $query = "SELECT * FROM course ";
         $query_run = mysqli_query($conn, $query);
         if(mysqli_num_rows($query_run) > 0)
         {
-            foreach($query_run as $program){    
+            foreach($query_run as $course){    
         ?>
            <tr>
-                <td><?= $program['Program_Name']; ?></td>
-                <td><?= $program['Slots']; ?></td>
-                <td><?= $program['Department_Name'];?> Department</td>
-                <td><?= $program['College_Name'];?></td>
+                <td><?= $course['Course_Number']; ?></td>
+                <td><?= $course['Course_name']; ?></td>
+                <td><?= $course['Prerequisite']; ?></td>
+                <td><?= $course['Course_Slot'];?></td>
+                <td><?= $course['Credits'];?></td>
                 <td>
-                    <a href="view_program.php?id=<?= $program['Program_ID']; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                    <a href="view_course.php?id=<?= $course['Course_ID']; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
                 </td>
             </tr>
             <?php

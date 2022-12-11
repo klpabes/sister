@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>book</title>
+   <title> SISTER | Course Offering</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../dist/css/style.css">
 
 </head>
 <body>
@@ -22,10 +22,10 @@
 
 <section class="header">
 
-   <a href="home.php" class="logo">Course Offering</a>
+   <a href="../index.php" class="logo">Course Offering</a>
 
    <nav class="navbar">
-      <a href="home.php">home</a>
+      <a href="index.php">home</a>
       <a href="about.php">Sign up</a>
       <a href="package.php">Student Login</a>
       <a href="book.php">Admin Login</a>
@@ -37,7 +37,8 @@
 
 <!-- header section ends -->
 
-<div class="heading" style="background:url(images/header-ccs.png) no-repeat">
+
+<div class="heading" style="background:url(../images/header-ccs.png) no-repeat">
    <h1>Discover Courses</h1>
 </div>
 
@@ -55,7 +56,7 @@ To provide post-baccalaureate and continuing education programs to advance the k
 
       <div class="box">
          <div class="image">
-            <img src="images/chemeng.png" alt="">
+            <img src="../images/chemeng.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Chemical Engineering</h3>
@@ -64,25 +65,29 @@ To provide post-baccalaureate and continuing education programs to advance the k
             <br></br>
             <br></br>
             <br></br>
-            <a href="ccs.php" class="btn">Enroll now!</a>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
 
       <div class="box">
          <div class="image">
-            <img src="images/envieng.jpg" alt="">
+            <img src="../images/envieng.jpg" alt="">
          </div>
          <div class="content">
             <h3>BS in Environmental Engineering</h3>
             <p>Become part of business success and growth while helping improve the lives of people by learning to be customer-centric. This program covers exciting areas in 
                 marketing such as brand management, distribution, sales, marketing research, advertising, pricing strategies, digital marketing and many more.</p>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       
       <div class="box">
          <div class="image">
-            <img src="images/civileng.png" alt="">
+            <img src="../images/civileng.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Civil Engineering</h3>
@@ -93,12 +98,14 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       <div class="box">
          <div class="image">
-            <img src="images/comeng.png" alt="">
+            <img src="../images/comeng.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Computer Engineering</h3>
@@ -106,13 +113,13 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 and hardware components in the modern computing systems and computer-controlled equipment.</p>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       
       <div class="box">
          <div class="image">
-            <img src="images/ee.png" alt="">
+            <img src="../images/ee.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Electrical Engineering</h3>
@@ -124,16 +131,21 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
             </div>
             </div>
          
             <div class="box">
          <div class="image">
-            <img src="images/electronicseng.png" alt="">
+            <img src="../images/electronicseng.png" alt="">
          </div>
          <div class="content">
-            <h3>BS in Electronics and Communication Engineering</h3>
+            <h3>BS in Electronics Engineering</h3>
             <p>Be an expert in the conceptualization, design and development of electronic, computer and communication products, systems, services and processes.</p>
                 <br></br>
                 <br></br>
@@ -141,14 +153,18 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
             </div>
             </div>
 
             
             <div class="box">
          <div class="image">
-            <img src="images/iam.jpg" alt="">
+            <img src="../images/iam.jpg" alt="">
          </div>
          <div class="content">
             <h3>BS in Industrial Automation and Mechatronics</h3>
@@ -158,13 +174,14 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
             </div>
             </div>
 
             <div class="box">
          <div class="image">
-            <img src="images/ceraeng.png" alt="">
+            <img src="../images/ceraeng.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Ceramics Engineering</h3>
@@ -173,13 +190,13 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 in hospital and clinic patients.</p>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
             </div>
             </div>
 
             <div class="box">
          <div class="image">
-            <img src="images/meteng.png" alt="">
+            <img src="../images/meteng.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Metallurgical Engineering</h3>
@@ -195,13 +212,19 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
             </div>
             </div>
 
             <div class="box">
          <div class="image">
-            <img src="images/miningeng.png" alt="">
+            <img src="../images/miningeng.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Mining Engineering</h3>
@@ -210,13 +233,13 @@ To provide post-baccalaureate and continuing education programs to advance the k
                  protection and safety, and closure, and decommissioning to harness mineral resources safely and economically for the social and economic benefits of the country.</p>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
             </div>
             </div>
 
             <div class="box">
          <div class="image">
-            <img src="images/mecheng.png" alt="">
+            <img src="../images/mecheng.png" alt="">
          </div>
          <div class="content">
             <h3>BS in Mechanical Engineering</h3>
@@ -229,7 +252,12 @@ To provide post-baccalaureate and continuing education programs to advance the k
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
             </div>
             </div>
 
@@ -256,7 +284,7 @@ To provide post-baccalaureate and continuing education programs to advance the k
 
 <!-- footer section starts  -->
 
-<section class="footer">
+<section class="footer" style="background:url('../images/footer-bg.jpg')">
 
    <div class="box-container">
 
@@ -297,7 +325,6 @@ To provide post-baccalaureate and continuing education programs to advance the k
    
 
 </section>
-
 <!-- footer section ends -->
 
 
@@ -313,7 +340,7 @@ To provide post-baccalaureate and continuing education programs to advance the k
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../dist/js/script.js"></script>
 
 </body>
 </html>

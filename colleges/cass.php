@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>book</title>
+   <title>SISTER | Course Offering</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../dist/css/style.css">
 
 </head>
 <body>
@@ -22,10 +22,10 @@
 
 <section class="header">
 
-   <a href="home.php" class="logo">Course Offering</a>
+   <a href="../index.php" class="logo">Course Offering</a>
 
    <nav class="navbar">
-      <a href="index.php">home</a>
+      <a href="../index.php">home</a>
       <a href="about.php">Sign up</a>
       <a href="package.php">Student Login</a>
       <a href="book.php">Admin Login</a>
@@ -37,7 +37,7 @@
 
 <!-- header section ends -->
 
-<div class="heading" style="background:url(images/header-ccs.png) no-repeat">
+<div class="heading" style="background:url(../images/header-ccs.png) no-repeat">
    <h1>Discover Courses</h1>
 </div>
 
@@ -56,7 +56,7 @@
 
       <div class="box">
          <div class="image">
-            <img src="images/els.png" alt="">
+            <img src="../images/els.png" alt="">
          </div>
          <div class="content">
             <h3>BA in English Language Studies</h3>
@@ -65,13 +65,14 @@
                 real-world issues, and work collaboratively and productively in diverse teams demonstrating cultural sensitivity and global perspectives.</p>
             <br></br>
             <br></br>
-            <a href="ccs.php" class="btn">Enroll now!</a>
+            <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
 
       <div class="box">
          <div class="image">
-            <img src="images/CASS.jpg" alt="">
+            <img src="../images/CASS.jpg" alt="">
          </div>
          <div class="content">
             <h3>BA in Literary and Cultural Studies</h3>
@@ -81,13 +82,13 @@
                 entertainment, diplomacy, marketing communication, service industry, and cultural industry—all spheres interfacing with the culturally exposed and literature-trained.</p>
                 <br></br>
     
-            <a href="book.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       
       <div class="box">
          <div class="image">
-            <img src="images/ab-filipino.png" alt="">
+            <img src="../images/ab-filipino.png" alt="">
          </div>
          <div class="content">
             <h3>BA in Filipino</h3>
@@ -97,13 +98,16 @@
                 at makapagbukas ng oportunidad para sa praktikal na aplikasyon ng mga kasanayan at kaalamang natamo.</p>
                 <br></br>
                 <br></br>
-                
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       <div class="box">
          <div class="image">
-            <img src="images/ab-history.png" alt="">
+            <img src="../images/ab-history.png" alt="">
          </div>
          <div class="content">
             <h3>BA in History (Philippine-Asian History Track)</h3>
@@ -115,14 +119,20 @@
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
          
       </div>
 
       <div class="box">
          <div class="image">
-            <img src="images/CASS.jpg" alt="">
+            <img src="../images/CASS.jpg" alt="">
          </div>
          <div class="content">
             <h3>BA in History (International History Track)</h3>
@@ -133,14 +143,17 @@
             <br></br>
             <br></br>
             <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <br></br>
+            <br></br>
+            <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       
 
         </div>
         <div class="box">
          <div class="image">
-            <img src="images/CASS.jpg" alt="">
+            <img src="../images/CASS.jpg" alt="">
          </div>
          <div class="content">
             <h3>BA in Panitikan</h3>
@@ -152,12 +165,16 @@
             <br></br>
             <br></br>
             <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
         </div>
 </div>
 <div class="box">
          <div class="image">
-            <img src="images/ab-polsci.png" alt="">
+            <img src="../images/ab-polsci.png" alt="">
          </div>
          <div class="content">
             <h3>BA in Political Science</h3>
@@ -167,12 +184,13 @@
                <br></br>
                <br></br>
                <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+               <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
 </div>
 <div class="box">
          <div class="image">
-            <img src="images/bs-psychology.png" alt="">
+            <img src="../images/bs-psychology.png" alt="">
          </div>
          <div class="content">
             <h3>BA in Psychology</h3>
@@ -182,13 +200,13 @@
                <br></br>
                <br></br>
                <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
 </div>
 
 <div class="box">
          <div class="image">
-            <img src="images/CASS.jpg" alt="">
+            <img src="../images/CASS.jpg" alt="">
          </div>
          <div class="content">
             <h3>BS Psychology</h3>
@@ -197,25 +215,28 @@
             <br></br>
             <br></br>
             <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <br></br>
+            <br></br>
+            <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
 </div>
 
 <div class="box">
          <div class="image">
-            <img src="images/ab-sociology.png" alt="">
+            <img src="../images/ab-sociology.png" alt="">
          </div>
          <div class="content">
             <h3>BA in Sociology</h3>
             <p>Bachelor of Arts in Sociology combines theory and practice to provide grounded learning for critical and multi-dimensional perspectives in analyzing social behavior 
                and processes and allows students to contribute to the production, transmission, and application of knowledge through research and engaged scholarship.</p>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
 </div>
 
 <div class="box">
          <div class="image">
-            <img src="images/CASS.jpg" alt="">
+            <img src="../images/CASS.jpg" alt="">
          </div>
          <div class="content">
             <h3>BS in Philosophy (Applied Ethics)</h3>
@@ -223,7 +244,10 @@
                clinical work, mental health care, research, and teaching.</p>
             <br></br>
             <br></br>
-            <a href="book.php" class="btn">Enroll now!</a>
+            <br></br>
+            <br></br>
+            <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
 </div>
 
@@ -250,16 +274,16 @@
 
 <!-- footer section starts  -->
 
-<section class="footer">
+<section class="footer" style="background:url('../images/footer-bg.jpg')">
 
    <div class="box-container">
 
       <div class="box">
          <h3>quick links</h3>
-         <a href="home.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
-         <a href="about.php"> <i class="fas fa-angle-right"></i> Sign - up</a>
-         <a href="package.php"> <i class="fas fa-angle-right"></i> Student Login</a>
-         <a href="book.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
+         <a href="index.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
+         <a href=".php"> <i class="fas fa-angle-right"></i> Sign - up</a>
+         <a href="student_login.php"> <i class="fas fa-angle-right"></i> Student Login</a>
+         <a href="admin_login.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
       </div>
 
       <div class="box">
@@ -307,7 +331,7 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../dist/js/script.js"></script>
 
 </body>
 </html>

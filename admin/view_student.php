@@ -11,7 +11,8 @@ $result= mysqli_fetch_array($query);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SISTER | Admin Dashboard</title>
-
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icon" href="../dist/img/logo.png">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -337,5 +338,4 @@ $result= mysqli_fetch_array($query);
 <script src="../plugins/chart.js/Chart.min.js"></script>
 <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script> 

@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>book</title>
+   <title>SISTER | Course Offering</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../dist/css/style.css">
 
 </head>
 <body>
@@ -22,13 +22,13 @@
 
 <section class="header">
 
-   <a href="home.php" class="logo">Course Offering</a>
+   <a href="../index.php" class="logo">Course Offering</a>
 
    <nav class="navbar">
       <a href="index.php">home</a>
-      <a href="registration.php">Sign up</a>
-      <a href="student_login.php">Student Login</a>
-      <a href="admin_login.php">Admin Login</a>
+      <a href="about.php">Sign up</a>
+      <a href="package.php">Student Login</a>
+      <a href="book.php">Admin Login</a>
    </nav>
 
    <div id="menu-btn" class="fas fa-bars"></div>
@@ -37,9 +37,10 @@
 
 <!-- header section ends -->
 
-<div class="heading" style="background:url(images/header-ccs.png) no-repeat">
+<div class="heading" style="background:url(../images/header-ccs.png) no-repeat">
    <h1>Discover Courses</h1>
 </div>
+
 
 <!-- booking section starts  -->
 
@@ -57,7 +58,7 @@
 
       <div class="box">
          <div class="image">
-            <img src="images/bsaccountancy.png" alt="">
+            <img src="../images/bsaccountancy.png" alt="">
          </div>
          <div class="content">
             <h3>BS Accountancy</h3>
@@ -66,26 +67,31 @@
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="student_login.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
 
       <div class="box">
          <div class="image">
-            <img src="images/businessecon.png" alt="">
+            <img src="../images/businessecon.png" alt="">
          </div>
          <div class="content">
             <h3>BSBA Business Economics</h3>
             <p>Become part of business success and growth while helping improve the lives of people by learning to be customer-centric. This program covers exciting areas in 
                 marketing such as brand management, distribution, sales, marketing research, advertising, pricing strategies, digital marketing and many more.</p>
                 <br></br>
-            <a href="student_login.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       
       <div class="box">
          <div class="image">
-            <img src="images/entrepmarket.png" alt="">
+            <img src="../images/entrepmarket.png" alt="">
          </div>
          <div class="content">
             <h3>BSBA Marketing Management</h3>
@@ -95,26 +101,31 @@
                 <br></br>
                 <br></br>
                 <br></br>
-            <a href="student_login.php" class="btn">Enroll now!</a>
+                <br></br>
+                <br></br>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       <div class="box">
          <div class="image">
-            <img src="images/entrep.png" alt="">
+            <img src="../images/entrep.png" alt="">
          </div>
          <div class="content">
-            <h3>BS Entrepreneurship</h3>
+            <h3>BS </h3>
+            <h3> Entrepreneur </h3>
             <p>Learn more about self-sufficiency and self-employment through entrepreneurship; expose yourself to the various functional areas of business management, and be more 
                 open to opportunities in the area of micro-enterprise, in raising capital, engaging in production, marketing products and/or services, and managing financial and 
                 human resources.</p>
                 <br></br>
-            <a href="student_login.php" class="btn">Enroll now!</a>
+                <br></br>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
       </div>
       
       <div class="box">
          <div class="image">
-            <img src="images/hm.png" alt="">
+            <img src="../images/hm.png" alt="">
          </div>
          <div class="content">
             <h3>BS Hospitality Management</h3>
@@ -122,7 +133,7 @@
                 skills, and technical skills that will address the demands of the different sectors in the field.</p>
                 <br></br>
                 <br></br>
-            <a href="student_login.php" class="btn">Enroll now!</a>
+            <a href="../student/student_login.php" class="btn">Enroll now!</a>
          </div>
 
 
@@ -149,16 +160,16 @@
 
 <!-- footer section starts  -->
 
-<section class="footer">
+<section class="footer" style="background:url('../images/footer-bg.jpg')">
 
    <div class="box-container">
 
       <div class="box">
          <h3>quick links</h3>
          <a href="home.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
-         <a href="registration.php"> <i class="fas fa-angle-right"></i> Sign - up</a>
-         <a href="student_login.php"> <i class="fas fa-angle-right"></i> Student Login</a>
-         <a href="admin_login.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
+         <a href="about.php"> <i class="fas fa-angle-right"></i> Sign - up</a>
+         <a href="package.php"> <i class="fas fa-angle-right"></i> Student Login</a>
+         <a href="book.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
       </div>
 
       <div class="box">
@@ -201,12 +212,11 @@
 
 
 
-
 <!-- swiper js link  -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../dist/js/script.js"></script>
 
 </body>
 </html>

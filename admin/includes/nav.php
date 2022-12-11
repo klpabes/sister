@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-light navbar-dark">
+<nav class="main-header navbar navbar-expand navbar-dark" style="background-color: #992129">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -46,11 +46,11 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar main-sidebar-custom sidebar-dark-danger elevation-4">
+  <aside class="main-sidebar main-sidebar-custom sidebar-light-danger elevation-4" style="background-color: #F8E4C7;">
     <!-- Brand Logo -->
-    <a href="dashboard.php" class="brand-link">
-      <img src="../dist/img/logo.png" alt="SISTERLogo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light"><b>SISTER</b></span>
+    <a href="dashboard.php" class="brand-link" style="background-color: #F8E4C7">
+      <img src="../dist/img/logo.png" alt="SISTERLogo" class="brand-image" style="opacity: .8">
+      <span class="brand-text" style="color: #992129;"><b>SISTER</b></span>
     </a>
 
     <!-- Sidebar -->
@@ -68,7 +68,7 @@
         <!--TEST-->
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" >
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item active">
@@ -89,6 +89,12 @@
                 <a href="admission.php" class="nav-link">
                   <i class="fa fa-user-plus nav-icon"></i>
                   <p>Student Admission</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-user-graduate nav-icon"></i>
+                  <p>Advise Student</p>
                 </a>
               </li>
           </li>
@@ -116,9 +122,9 @@
             </a> 
          </li>
          <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="courses.php" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
-                <p>Subjects</p>
+                <p>Courses/Subjects</p>
             </a> 
          </li>
           <li class="nav-header">ANNOUNCEMENT MANAGEMENT</li>
@@ -130,7 +136,7 @@
               </p>
             </a>
           </li> 
-          <li class="nav-header">CLEARANCE & LIABILITIES MGMT.</li>
+          <li class="nav-header">CLEARANCE & LIABILITIES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
@@ -138,16 +144,29 @@
                 List of Clearance
               </p>
             </a>
+          </li>
+          <li class="nav-header">SCHOOL YEAR</li>
+          <li class="nav-item">
+            <a href="session.php" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Set Session
+              </p>
+            </a>
+          </li>
+          <hr>
+          <li class="nav-item">
+            <a href="logout.php" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Logout
+              </p>
+            </a>
           </li> 
         </ul>
+
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-
-    <div class="sidebar-custom">
-      <a href="#" class="btn btn-link"><i class="fas fa-cogs"></i></a>
-      <a href="logout.php" class="btn btn-secondary hide-on-collapse pos-right">Logout</a>
-    </div>
-    <!-- /.sidebar-custom -->
   </aside>

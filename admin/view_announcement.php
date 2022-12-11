@@ -11,12 +11,14 @@ if(isset($_POST['submit'])){
     $subject = mysqli_real_escape_string($conn,$_POST['subject']);
     $announce = mysqli_real_escape_string($conn,$_POST['announce']);
 
-    $query = "UPDATE announcements SET Announcement_For='$classid', Announcement_Subject='$subject', Announcement_Paragraph='$announce'";
+    $query = "UPDATE announcements  SET Announcement_For='$classid', Announcement_Subject='$subject', Announcement_Paragraph='$announce' WHERE Announcement_ID='$announcement_id'";
 
     $query_run = mysqli_query($conn, $query);
 
     if($query_run){
     $_SESSION['status'] = "Announcement updated successfully!";
+    header("Location: " . $_SERVER["REQUEST_URI"]);
+    exit;
     }else{
     echo "Error, Something went wrong";
     }
@@ -29,7 +31,8 @@ if(isset($_POST['submit'])){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SISTER | Admin Dashboard</title>
-
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icon" href="../dist/img/logo.png">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->

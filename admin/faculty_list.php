@@ -3,8 +3,6 @@ session_start();
 error_reporting(0);
 include ('includes/db_connection.php');
 
-$faculty_id = $_GET['id'];
-
     $query_college = "SELECT * FROM college ORDER BY College_Name ASC";
     
     $result = $conn->query($query_college); 
@@ -35,7 +33,7 @@ $faculty_id = $_GET['id'];
 
 
     $query = "INSERT INTO faculty (Faculty_Lastname,Faculty_Firstname,Faculty_Middle,
-    Faculty_Username,Faculty_Password,College,Department,Status) 
+    Faculty_Username,Faculty_Password,College_ID,Department,Status) 
     VALUES ('$lastname','$firstname',' $middlename','$username',md5('$password'),'$college','$department','$status')";
 
     $query_run = mysqli_query($conn, $query);
@@ -55,7 +53,7 @@ $faculty_id = $_GET['id'];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SISTER | Admin Dashboard</title>
-
+  <link rel="icon" type="image/x-icon" href="../dist/img/logo.png">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -115,7 +113,7 @@ $faculty_id = $_GET['id'];
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-hover table-striped">
-                <button type="button" class="btn btn-success ml-auto mb-5 mb-sm-0" data-toggle="modal" data-target="#modal-lg">
+                <button type="button" class="btn btn-success ml-auto mb-9 mb-sm-0" data-toggle="modal" data-target="#modal-lg">
                           Add Faculty
                 </button>
                 <div class="col-sm-12">
@@ -127,14 +125,18 @@ $faculty_id = $_GET['id'];
                       <th>ID No.</th>
                       <th>Last Name</th>
                       <th>First Name</th>
+                      <th>College</th>
                       <th>Department</th>
                       <th>Action</th>
                   </tr>
 		</thead>
     <tbody>
         <?php 
-        $query = "SELECT * FROM faculty ";
-        $query_run = mysqli_query($conn, $query);
+        $query = "SELECT faculty.Faculty_ID, faculty.Faculty_Firstname, faculty.Faculty_Lastname, faculty.Department, faculty.College_ID, 
+        college.College_ID, college.College_Name
+        FROM faculty  
+        JOIN college ON faculty.College_ID=college.College_ID;";
+        $query_run = mysqli_query($conn,$query);
         if(mysqli_num_rows($query_run) > 0)
         {
             foreach($query_run as $faculty){    
@@ -143,6 +145,7 @@ $faculty_id = $_GET['id'];
                 <td><?= $faculty['Faculty_ID']; ?></td>
                 <td><?= $faculty['Faculty_Lastname']; ?></td>
                 <td><?= $faculty['Faculty_Firstname'];?></td>
+                <td><?= $faculty['College_Name'];?></td>
                 <td><?= $faculty['Department'];?></td>
                 <td>
                     <a href="view_faculty.php?id=<?= $faculty['Faculty_ID']; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
