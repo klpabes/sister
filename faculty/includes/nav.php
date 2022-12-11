@@ -77,56 +77,56 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-header">STUDENT MANAGEMENT</li>
-          <li class="nav-item active">
-            <a href="student_list.php" class="nav-link">
-              <i class="nav-icon fas fa-graduation-cap"></i>
-              <p>
-                Students
-              </p>
-            </a>
+          <li class="nav-header">Academics</li>
             <li class="nav-item">
                 <a href="admission.php" class="nav-link">
                   <i class="fa fa-user-plus nav-icon"></i>
-                  <p>Student Admission</p>
+                  <p>Teaching Load</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-book-open nav-icon"></i>
+                  <p>Subjects Handled</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-calendar nav-icon"></i>
+                  <p>Class Schedule</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="advising.php" class="nav-link">
                 <i class="fas fa-user-graduate nav-icon"></i>
-                  <p>Advise Student</p>
+                  <p>INC Grade Monitor</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-user-graduate nav-icon"></i>
+                  <p>Class Advisees</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-user-graduate nav-icon"></i>
+                  <p>Course Enlistment</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-user-graduate nav-icon"></i>
+                  <p>Student Clearance</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-user-graduate nav-icon"></i>
+                  <p>Department Course Offering</p>
                 </a>
               </li>
           </li>
-          <li class="nav-header">FACULTY MANAGEMENT</li>
-          <li class="nav-item">
-            <a href="faculty_list.php" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>Faculties</p>
-            </a>
-          </li>
-          <li class="nav-header">COLLEGE & DEPT. MANAGEMENT</li>
-          <li class="nav-item">
-            <a href="colleges.php" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
-              <p>
-                Colleges
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">PROGRAM & COURSE MANAGEMENT</li>
-          <li class="nav-item">
-            <a href="programs.php" class="nav-link">
-                <i class="nav-icon fas fa-certificate"></i>
-                <p>Programs</p>
-            </a> 
-         </li>
-         <li class="nav-item">
-            <a href="courses.php" class="nav-link">
-                <i class="nav-icon fas fa-book"></i>
-                <p>Courses/Subjects</p>
-            </a> 
-         </li>
           <li class="nav-header">ANNOUNCEMENT MANAGEMENT</li>
           <li class="nav-item">
             <a href="announcements.php" class="nav-link">
@@ -145,16 +145,6 @@
               </p>
             </a>
           </li>
-          <li class="nav-header">SCHOOL YEAR</li>
-          <li class="nav-item">
-            <a href="session.php" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
-              <p>
-                Set Session
-              </p>
-            </a>
-          </li>
-          <hr>
           <li class="nav-item">
             <a href="logout.php" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
