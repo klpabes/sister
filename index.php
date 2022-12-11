@@ -145,7 +145,7 @@ div.transbox p {
 <div class="box-container">
 
    <div class="box">
-   <a href="faculty_login.php">
+   <a href="faculty/faculty_login.php">
       <img src="images/fac.png" alt="">
       <h3>faculty login</h3>
    </a>
