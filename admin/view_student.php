@@ -55,10 +55,10 @@ $result= mysqli_fetch_array($query);
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-square"
-                       src="../dist/img/user4-128x128.jpg"
+                       src="../images/junel.jpg"
                        alt="User profile picture">
                 </div>
-                <h3 class="profile-username text-center"><?php echo $result['Student_Firstname']; ?> <?php echo $result['Student_Middlename']; ?>. <?php echo $result['Student_Lastname']; ?></h3>
+                <h3 class="profile-username text-center"><?php echo $result['Student_Firstname']; ?> <?php echo $result['Student_Middlename']; ?> <?php echo $result['Student_Lastname']; ?></h3>
                 <p class="text-muted text-center"><?php echo $result['Student_Year_Level'];?> <?php echo $result['Student_Program'];?></p>
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
@@ -124,19 +124,20 @@ $result= mysqli_fetch_array($query);
                                     <dt class="col-sm-4">Gender</dt>
                                     <dd class="col-sm-8"><?php echo $result['Student_Gender'];?></dd>
                                     <dt class="col-sm-4">Civil Status</dt>
+                                    <dd class="col-sm-8">Single</dd>
                                     <dd class="col-sm-8"></dd>
                                     <dt class="col-sm-4">Citizenship</dt>
-                                    <dd class="col-sm-8"></dd>
+                                    <dd class="col-sm-8">Filipino</dd>
                                     <dt class="col-sm-4">Religion</dt>
-                                    <dd class="col-sm-8"></dd>
+                                    <dd class="col-sm-8">UCCP</dd>
                                     <dt class="col-sm-4">Ethnic Group</dt>
-                                    <dd class="col-sm-8"></dd>
+                                    <dd class="col-sm-8">N/A</dd>
                                     <dt class="col-sm-4">Date of Birth</dt>
                                     <dd class="col-sm-8"><?php echo $result['Student_Birthdate'];?></dd>
-                                    <dt class="col-sm-4">Name of Father</dt>
+                                    <!-- <dt class="col-sm-4">Name of Father</dt>
                                     <dd class="col-sm-8"></dd>
                                     <dt class="col-sm-4">Name of Mother</dt>
-                                    <dd class="col-sm-8"></dd>
+                                    <dd class="col-sm-8"></dd> -->
                                     </dl>
                                 </div>
                                 </div>

@@ -78,7 +78,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Faculties</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number">1,678</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -108,7 +108,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Enrolled Students</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-number">8,526</span>
               </div>
               <!-- /.info-box-content -->
             </div>
