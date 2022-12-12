@@ -29,6 +29,12 @@
       <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <style>
+    .scroll{
+      max-height: 600px;
+      overflow-y: auto;
+    }
+  </style>
 </head>
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
@@ -77,7 +83,59 @@ print Greetings($hours);
           </div>
         </div>
       </section>
-
+      <section class="content">
+      <div class="col-md-4">
+        <div class="card card-row" style="background-color: #992129">
+          <div class="card-header">
+            <h3 class="card-title text-white">
+            <i class="fas fa-scroll"></i>Announcements
+            </h3>
+            <div class="row float-right"><a href="announcements.php" class="fas fa-plus"></a></div>
+          </div>
+          <div class="card-body scroll" style="background-color: #992129">
+            
+          <?php 
+              $query = "SELECT * FROM announcements ";
+              $query_run = mysqli_query($conn, $query);
+              if(mysqli_num_rows($query_run) > 0)
+              {
+                  foreach($query_run as $announcement){    
+              ?>
+              
+            <div class="card card-danger card-outline">
+              <div class="card-header">
+                <h6 class="card-title">
+                  <!--announcement title-->
+                  <?= $announcement['Announcement_Subject'];?>
+                </h6>
+                  <div class="card-tools">
+                    <a href="">#<!--announcement id--><?= $announcement['Announcement_ID'];?></a>
+                    <a href="view_announcement.php?id=<?= $announcement['Announcement_ID']; ?>" class="btn btn-tool btn-link"><!--announcement link-->
+                      <i class="fas fa-pen"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="card-body">
+                <?= $announcement['Announcement_Paragraph'];?>
+                <br>
+                <div class="float-left">For: <?= $announcement['Announcement_For'];?></div>
+                <div class="row float-right">
+                <?= $announcement['Announcement_Date'];?>
+                </div>
+                </div>
+              </div>
+              </a>
+              <?php
+                    }
+                }else{
+                    echo "<h5> No records found </h5>";
+                }
+              ?>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
   </div>
 </div>
 

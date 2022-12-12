@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="../sister-main/dist/css/style.css">
+   <link rel="stylesheet" href="../sister/dist/css/style.css">
 
 </head>
 <body>
@@ -22,7 +22,7 @@
 
 <section class="header">
 
-   <a href="../sister-main/index.php" class="logo">Student Information System for Enrollment and Rating</a>
+   <a href="../sister/index.php" class="logo">Student Information System for Enrollment and Rating</a>
 
    <div id="menu-btn" class="fas fa-bars"></div>
 
@@ -30,7 +30,7 @@
 
 <!-- header section ends -->
 
-<div class="heading" style="background:url(../sister-main/images/header-ccs.png) no-repeat">
+<div class="heading" style="background:url(../sister/images/header-ccs.png) no-repeat">
    <h1>About Us </h1>
 </div>
 
@@ -70,7 +70,7 @@
 
       <div class="box">
          <div class="image">
-            <img src="../sister-main/images/aboutusmeme.jpg" alt="">
+            <img src="../sister/images/aboutusmeme.jpg" alt="">
          </div>
          <div class="content">
             <h3>Melanie</h3>
@@ -80,7 +80,7 @@
       </div>
       <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Heindrick Allen Lubguban</h3>
@@ -90,7 +90,7 @@
       
       <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Christian Jay Penales</h3>
@@ -99,7 +99,7 @@
       </div>
       <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>John Lloyd Daque</h3>
@@ -110,7 +110,7 @@
 
       <div class="box">
          <div class="image">
-            <img src="../sister-main/images/junel.jpg" alt="">
+            <img src="../sister/images/junel.jpg" alt="">
          </div>
          <div class="content">
             <h3>Junel Jacob Casera</h3>
@@ -122,7 +122,7 @@
 
         <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Rizahtin Camama</h3>
@@ -132,7 +132,7 @@
         
             <div class="box">
          <div class="image">
-            <img src="../sister-main/images/kyle.jpg" alt="">
+            <img src="../sister/images/kyle.jpg" alt="">
          </div>
          <div class="content">
             <h3>Kyle Chrysler Tumangob</h3>
@@ -141,7 +141,7 @@
 </div>
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Lee Angela Garnica</h3>
@@ -150,7 +150,7 @@
 </div>
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Angelica Ramirez</h3>
@@ -160,7 +160,7 @@
 
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Pretty Ann</h3>
@@ -171,7 +171,7 @@
 
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Ciara</h3>
@@ -182,7 +182,7 @@
 
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/clarice.jpg" alt="">
+            <img src="../sister/images/clarice.jpg" alt="">
          </div>
          <div class="content">
             <h3>Clarice</h3>
@@ -193,7 +193,7 @@
 
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Kent Lawrence Pabes</h3>
@@ -203,7 +203,7 @@
 
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Nikki</h3>
@@ -214,7 +214,7 @@
 
 <div class="box">
          <div class="image">
-            <img src="../sister-main/images/ccs.png" alt="">
+            <img src="../sister/images/ccs.png" alt="">
          </div>
          <div class="content">
             <h3>Shulammite Hermita</h3>
@@ -244,13 +244,13 @@
 
 <!-- footer section starts  -->
 
-<section class="footer" style="background:url('../sister-main/images/footer-bg.jpg')">
+<section class="footer" style="background:url('../sister/images/footer-bg.jpg')">
 
    <div class="box-container">
 
       <div class="box">
          <h3>quick links</h3>
-         <a href="index.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
+         <a href=".php"><i class="fas fa-angle-right">MSU - IIT Vision, Mission, Core Values</a>
          <a href=".php"> <i class="fas fa-angle-right"></i> Sign - up</a>
          <a href="student_login.php"> <i class="fas fa-angle-right"></i> Student Login</a>
          <a href="admin_login.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
@@ -301,7 +301,7 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="../sister-main/dist/js/script.js"></script>
+<script src="../sister/dist/js/script.js"></script>
 
 </body>
 </html>

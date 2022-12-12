@@ -91,7 +91,7 @@
                     <tbody>
                       <tr>
                          <th>Registration Date</th>
-                        <td>August 18, 2022</td>
+                        <td><?php echo $result['Admission_Date']; ?></td>
                       </tr>
                       <tr>
                         <th>ID Number</th>
@@ -107,31 +107,31 @@
                       </tr>
                       <tr>
                         <th>Course</th>
-                        <td>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY (BSIT)</td>
+                        <td><?php echo $result['Student_Program']; ?></td>
                       </tr>
                       <tr>
                       <th>Year Level</th>
-                        <td>4</td>
+                        <td><?php echo $result['Student_Year_Level']; ?></td>
                       </tr>
                       <tr>
                       <th>Scholarship Status</th>
-                        <td>Dean's Award</td>
+                        <td><?php echo $result['Scholarship_Status']; ?></td>
                       </tr>
                       <tr>
                       <th>Scholastic Status</th>
-                        <td>REGULAR</td>
+                        <td><?php echo $result['Scholastic_Status']; ?></td>
                       </tr>
                       <tr>
                       <th>Previous GPA</th>
-                        <td>1.54167</td>
+                        <td><?php echo $result['Prev_Status']; ?></td>
                       </tr>
                       <tr>
                       <th>Cumulative GPA</th>
-                        <td>1.68812</td>
+                        <td><?php echo $result['cgpa']; ?></td>
                       </tr>
                       <tr>
                       <th>Total Load</th>
-                        <td>21 units</td>
+                        <td><?php echo $result['Total_Load']; ?></td>
                       </tr>
                     </tbody>
                   </table>

@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<nav class="main-header navbar navbar-expand navbar-dark navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -136,11 +136,11 @@
                 <p>Profile</p>
                 </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="cor.php" class="nav-link">
                 <i class="nav-icon fas fa-bullhorn"></i>
                 <p>Announcements</p>
-                </a>
+                </a> -->
             </li>
             <li class="nav-item">
                 <a href="cor.php" class="nav-link">

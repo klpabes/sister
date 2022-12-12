@@ -240,7 +240,7 @@ div.transbox p {
    </div>
    <div class="box">
       <div class="image">
-         <img src="images/con.png" alt="">
+         <img src="images/cons.png" alt="">
       </div>
       <div class="content">
          <h3>CON</h3>
@@ -337,10 +337,10 @@ div.transbox p {
 
    <div class="box">
       <h3>quick links</h3>
-      <a href="../sister-main/index.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
+      <a href="vmg.php"> <i class="fas fa-angle-right"></i> MSU - IIT Vision, Mission, Core Values</a>
       <a href="about.php"> <i class="fas fa-angle-right"></i> Sign - up</a>
-      <a href="../sister-main/student/student_login.php"> <i class="fas fa-angle-right"></i> Student Login</a>
-      <a href="../sister-main/admin/admin_login.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
+      <a href="student/student_login.php"> <i class="fas fa-angle-right"></i> Student Login</a>
+      <a href="admin/admin_login.php"> <i class="fas fa-angle-right"></i> Admin Login</a>
    </div>
 
    <div class="box">
