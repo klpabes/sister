@@ -95,11 +95,11 @@
                       </tr>
                       <tr>
                         <th>ID Number</th>
-                        <td>2019-3502</td>
+                        <td>><?php echo $result['Student_ID']; ?></td>
                       </tr>
                       <tr>
                         <th>Fullname</th>
-                        <td>PENALES, CHRISTIAN JAY M.</td>
+                        <td><?php echo $result['Student_Firstname']; ?><?php echo $result['Student_Lastname']; ?> </td>
                       </tr>
                       <tr>
                         <th>Term / School Year</th>

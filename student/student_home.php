@@ -34,7 +34,29 @@
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="../dist/img/logo.png" alt="SISTERLogo" height="300" width="300">
   </div>
-
+  <body>
+        <?php 
+function Greetings($hours)
+{
+    if ($hours >= 0 && $hours <= 12) {
+        return "Good Morning.";
+    } else {
+        if ($hours > 12 && $hours <= 17) {
+            return "Good Afternoon.";
+        } else {
+            if ($hours > 17 && $hours <= 20) {
+                return "Good Evening";
+            } else {
+                return "Good Night";
+            }
+        }
+    }
+}
+$hours = 13;
+print Greetings($hours);
+?>
+    </body> 
+    
 <body  class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed ">
 <div class="wrapper">
   <?php include('includes/student_nav.php');?>
@@ -43,7 +65,8 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Welcome to SISTER!</h1>
+            <h1>Welcome to SISTER!</h1>
+            <a href= greeting.php>Hello!</a>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
