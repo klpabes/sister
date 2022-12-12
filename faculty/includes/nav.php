@@ -77,6 +77,12 @@
               <p>Dashboard</p>
             </a>
           </li>
+          <li class="nav-item">
+                <a href="advising.php" class="nav-link">
+                <i class="fas fa-calendar nav-icon"></i>
+                  <p>Advise Student</p>
+                </a>
+              </li>
           <li class="nav-header">Academics</li>
             <li class="nav-item">
                 <a href="admission.php" class="nav-link">

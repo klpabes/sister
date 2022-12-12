@@ -92,9 +92,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="advising.php" class="nav-link">
-                <i class="fas fa-user-graduate nav-icon"></i>
-                  <p>Advise Student</p>
+                <a href="confirm.php" class="nav-link">
+                  <i class="fa fa-user-check nav-icon"></i>
+                  <p>Advising Confirmation</p>
                 </a>
               </li>
           </li>
