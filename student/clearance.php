@@ -62,8 +62,8 @@
               <h3 class="card-title">Status: <span class="text-green">Cleared</span> </h3>
               <span class="text float-right"><a href="clearance-archive.php">History</a></span>
             </div>
-            <div class="card-body">
-                            <h2 class="text-center text-green"><i class="fa fa-check-square-o"></i> Hooray! You have no liabilities!</h2>              <!-- PHP Foreach loop here-->
+            <div class="card-body" >
+                            <h2 class="text-center text-green"><i class="fa fa-check-square-o"></i>Good Job! You have no pending liabilities!</h2>              <!-- PHP Foreach loop here-->
                             <div class="row">
                               </div>
                             <!-- END PHP Foreach loop here-->
