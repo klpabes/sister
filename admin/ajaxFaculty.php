@@ -17,4 +17,3 @@ if(!empty($_POST["College_ID"])){
         echo '<option value="">Department not available</option>'; 
     } 
 }
-?>

@@ -25,7 +25,7 @@ if(!empty($_POST["College_ID"])){
     if($result->num_rows > 0){ 
         echo '<option value="">Select Program</option>'; 
         while($row = $result->fetch_assoc()){  
-            echo '<option value="'.$row['Program_Name'].'">'.$row['Program_Name'].'</option>'; 
+            echo '<option value="'.$row['Program_ID'].'">'.$row['Program_Name'].'</option>'; 
         } 
     }else{ 
         echo '<option value="">Program not available</option>'; 

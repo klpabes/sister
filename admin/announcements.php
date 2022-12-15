@@ -3,26 +3,27 @@ session_start();
 include('includes/db_connection.php');
 
 
-if(isset($_POST['submit'])){
-    $classid = mysqli_real_escape_string($conn,$_POST['classid']);
-    $subject = mysqli_real_escape_string($conn,$_POST['subject']);
-    $announce = mysqli_real_escape_string($conn,$_POST['announce']);
+if (isset($_POST['submit'])) {
+  $classid = mysqli_real_escape_string($conn, $_POST['classid']);
+  $subject = mysqli_real_escape_string($conn, $_POST['subject']);
+  $announce = mysqli_real_escape_string($conn, $_POST['announce']);
 
-    $query = "INSERT INTO announcements (Announcement_For, Announcement_Subject, Announcement_Paragraph) VALUES
+  $query = "INSERT INTO announcements (Announcement_For, Announcement_Subject, Announcement_Paragraph) VALUES
     ('$classid','$subject','$announce')";
 
-    $query_run = mysqli_query($conn, $query);
+  $query_run = mysqli_query($conn, $query);
 
-    if($query_run){
+  if ($query_run) {
     $_SESSION['status'] = "Announcement added successfully!";
-    }else{
+  } else {
     echo "Error, Something went wrong";
-    }
- }
+  }
+}
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,78 +41,77 @@ if(isset($_POST['submit'])){
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
-<!-- Site wrapper -->
-<div class="wrapper">
-  <!-- Navbar -->
-<?php include('includes/nav.php');?>
+  <!-- Site wrapper -->
+  <div class="wrapper">
+    <!-- Navbar -->
+    <?php include('includes/nav.php'); ?>
 
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Create Announcement</h1>
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Create Announcement</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Announcement</a></li>
+                <li class="breadcrumb-item active">Compose</li>
+              </ol>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Announcement</a></li>
-              <li class="breadcrumb-item active">Compose</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+        </div><!-- /.container-fluid -->
+      </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-          <?php
-                  if(isset($_SESSION['status']))
-                  {
-                    ?>
-                    <div class="col-sm-8">
-                      <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-check"></i><?php echo $_SESSION['status'];?></h5>
-                      </div>
-                    </div>
-                  <?php
-                    unset($_SESSION['status']);
-                  }  
-                ?>
-            <form method="POST">
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h3 class="card-title">Compose New Message</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <div class="form-group">
-                <label for="to">Announce To:</label>
-                  <select name="classid" class="form-control" required='true' placeholder="To:">
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <?php
+              if (isset($_SESSION['status'])) {
+              ?>
+                <div class="col-sm-8">
+                  <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-check"></i><?php echo $_SESSION['status']; ?></h5>
+                  </div>
+                </div>
+              <?php
+                unset($_SESSION['status']);
+              }
+              ?>
+              <form method="POST">
+                <div class="card card-primary card-outline">
+                  <div class="card-header">
+                    <h3 class="card-title">Compose New Message</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="to">Announce To:</label>
+                      <select name="classid" class="form-control" required='true' placeholder="To:">
                         <option value="student">Students</option>
                         <option value="faculty">Faculties</option>
                         <option value="public">Public</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" name="subject" placeholder="Subject:">
-                </div>
-                <div class="form-group">
-                    <textarea id="compose-textarea" name="announce" class="form-control" style="height: 300px">
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" name="subject" placeholder="Subject:">
+                    </div>
+                    <div class="form-group">
+                      <textarea id="compose-textarea" name="announce" class="form-control" style="height: 300px">
                     </textarea>
-                </div>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <div class="float-right">
-                  <button type="submit" name="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Submit</button>
-                </div>
-              </div>
-                </form>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">
+                    <div class="float-right">
+                      <button type="submit" name="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Submit</button>
+                    </div>
+                  </div>
+              </form>
               <!-- /.card-footer -->
             </div>
             <!-- /.card -->
@@ -119,7 +119,7 @@ if(isset($_POST['submit'])){
           <!-- /.col -->
         </div>
         <!-- /.row -->
-      </div><!-- /.container-fluid -->
+    </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
@@ -131,15 +131,16 @@ if(isset($_POST['submit'])){
 
 
 
-<script src="../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="../plugins/chart.js/Chart.min.js"></script>
-<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="../plugins/chart.js/Chart.min.js"></script>
+  <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../dist/js/adminlte.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
+
 </html>
