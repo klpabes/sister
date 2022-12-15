@@ -103,9 +103,9 @@ if (isset($_POST['save'])) {
                         <div class="form-group">
                           <label for="term">Term</label>
                           <select name="term" id="term" class="form-control" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="S">S</option>
+                            <option value="1st Term">1st Term</option>
+                            <option value="2nd Term">2nd Term</option>
+                            <option value="Summer">Summer</option>
                           </select>
                         </div>
                       </div>

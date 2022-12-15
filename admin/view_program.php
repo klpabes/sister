@@ -38,6 +38,10 @@ if (isset($_POST['delete'])) {
   <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -76,80 +80,118 @@ if (isset($_POST['delete'])) {
                   <h1 class="text-white"><i class="fas fa-book-open"></i> <?php echo $result['Program_Name']; ?></h1>
                   <h4 class="text-white"><i class="fas fa-map-marker"></i> <?php echo $result['Department_Name']; ?> Department</h4>
                 </div>
-                <!-- /.card-body -->
               </div>
             </div>
             <div class="col-md-12">
               <div class="card">
-                <div class="card-header p-2">
-                  <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link" href="#schedule_data" data-toggle="tab">Program Syllabus</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
-                  </ul>
-                </div><!-- /.card-header -->
+                <div class="card-header">
+                  <h5>Program Syllabus</h5>
+                </div>
                 <div class="card-body">
-                  <div class="tab-content">
-                    <div class="active tab-pane" id="schedule_data">
-                      <div class="card-body">
-                        <form action="#" method="post">
-                          <table id="emptbl" class="table table-striped">
-                            <tr>
-                              <th>Course No.</th>
-                              <th>Course Title</th>
-                              <th>Units</th>
-                              <th>Hours/Weeks</th>
-                              <th>Action</th>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <h5>First Year - 1st Semester</h5>
+                        </div>
+                        <table id="firstyear-firstsem" name="firstyear-firstsem" class="table table-striped">
+                          <thead>
+                            <th>Course No.</th>
+                            <th>Course Title</th>
+                            <th>Units</th>
+                            <th>Lec</th>
+                            <th>Lab</th>
+                            <th>Total</th>
+                            <th>Prerequisite</th>
                             </tr>
-                            <tr>
-                            <td class="col-md-2" id="col0">
-                                <select name="course[]" class="form-control" id="course">
+                          </thead>
+                          <tbody>
+                            <?php
+                            $query = "SELECT program_syllabus.Syllabus_ID, program_syllabus.Course_ID,  program_syllabus.Program_ID, program_syllabus.Lec,  program_syllabus.Lab,  program_syllabus.Total,
+                    course.Course_ID, course.Course_Name,course.Credits,course.Course_Number, course.Prerequisite
+                    FROM program_syllabus 
+                    INNER JOIN course ON program_syllabus.Course_ID=course.Course_ID
+                    WHERE program_syllabus.Program_ID='$program_id' AND program_syllabus.Semester_ID='1'";
 
-                                  <option value=""></option>
-                                  <?php
-                                  $query_course = "SELECT * FROM course";
-                                  $query_run = mysqli_query($conn,$query_course);
-                                  if (mysqli_num_rows($query_run) > 0) {
-                                    foreach ($query_run as $course) {
-                                        echo '<option value="' . $course['Course_Number'] . '">' . $course['Course_Number'] . '</option>';
-                                      }
-                                    } else {
-                                      echo '<option value="">Course not available</option>';
-                                    }
-                                    ?>
-                                </select>
-                              </td>
-                              <td id="col1"><input type="text" class="form-control" name="title[]" value="<?= $course['Course_name']; ?>"/></td>
-                              <td id="col2"><input type="text" class="form-control" name="units[]" value="" /></td>
-                              <td id="col3"><input type="text" class="form-control" name="hours[]" value="" /></td>
-                              <td><input type="button" class="btn btn-info" value="Delete" onclick="deleteRows()" /></td>
-                            </tr>
-                          </table>
-                          <table>
-                            <tr>
-                              <td><input type="button" value="Add Row" onclick="addRows()" /></td>
-                              <td><input type="submit" value="Submit" /></td>
-                            </tr>
-                          </table>
-                        </form>
+                            $query_run = mysqli_query($conn, $query);
+                            if (mysqli_num_rows($query_run) > 0) {
+                              foreach ($query_run as $course) {
+                            ?>
+                                <tr>
+                                  <td><?= $course['Course_Number']; ?></td>
+                                  <td><?= $course['Course_Name']; ?></td>
+                                  <td><?= $course['Credits']; ?></td>
+                                  <td><?= $course['Lec']; ?></td>
+                                  <td><?= $course['Lab']; ?></td>
+                                  <td><?= $course['Total']; ?></td>
+                                  <td><?= $course['Prerequisite']; ?></td>
+                                </tr>
+                            <?php
+                              }
+                            } else {
+                              echo "<td> No records found </td>";
+                            }
+                            ?>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <h5>First Year - 2nd Semester</h5>
+                        </div>
+                        <table id="firstyear-firstsem" name="firstyear-firstsem" class="table table-striped">
+                          <tr>
+                            <th>Course No.</th>
+                            <th>Course Title</th>
+                            <th>Units</th>
+                            <th>Lec</th>
+                            <th>Lab</th>
+                            <th>Total</th>
+                            <th>Prerequisite</th>
+                          </tr>
+                          <?php
+                          $query = "SELECT program_syllabus.Syllabus_ID, program_syllabus.Course_ID,  program_syllabus.Program_ID, program_syllabus.Lec,  program_syllabus.Lab,  program_syllabus.Total,
+                    course.Course_ID, course.Course_Name,course.Credits,course.Course_Number, course.Prerequisite
+                    FROM program_syllabus 
+                    INNER JOIN course ON program_syllabus.Course_ID=course.Course_ID
+                    WHERE program_syllabus.Program_ID='$program_id' AND program_syllabus.Semester_ID='2'";
+                          $query_run = mysqli_query($conn, $query);
+                          if (mysqli_num_rows($query_run) > 0) {
+                            foreach ($query_run as $course) {
+                          ?>
+                              <tr>
+                                <td><?= $course['Course_Number']; ?></td>
+                                <td><?= $course['Course_Name']; ?></td>
+                                <td><?= $course['Credits']; ?></td>
+                                <td><?= $course['Lec']; ?></td>
+                                <td><?= $course['Lab']; ?></td>
+                                <td><?= $course['Total']; ?></td>
+                                <td><?= $course['Prerequisite']; ?></td>
+                              </tr>
+                          <?php
+                            }
+                          } else {
+                            echo "<td> No records found </td>";
+                          }
+                          ?>
+                        </table>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </div>
-            <!-- /.tab-pane -->
           </div>
-          <!-- /.tab-content -->
-        </div><!-- /.card-body -->
+        </div>
     </div>
-    <!-- /.card -->
   </div>
-  <!-- /.col -->
   </div>
-  <!-- /.row -->
-  </div><!-- /.container-fluid -->
+  </div>
+  </div>
   </section>
   </div>
   </div>
@@ -165,28 +207,3 @@ if (isset($_POST['delete'])) {
   <!-- AdminLTE App -->
   <script src="../dist/js/adminlte.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    function addRows() {
-      var table = document.getElementById('emptbl');
-      var rowCount = table.rows.length;
-      var cellCount = table.rows[0].cells.length;
-      var row = table.insertRow(rowCount);
-      for (var i = 0; i <= cellCount; i++) {
-        var cell = 'cell' + i;
-        cell = row.insertCell(i);
-        var copycel = document.getElementById('col' + i).innerHTML;
-        cell.innerHTML = copycel;
-      }
-    }
-
-    function deleteRows() {
-      var table = document.getElementById('emptbl');
-      var rowCount = table.rows.length;
-      if (rowCount > '2') {
-        var row = table.deleteRow(rowCount - 1);
-        rowCount--;
-      } else {
-        alert('There should be atleast one row');
-      }
-    }
-  </script>

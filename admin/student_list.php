@@ -82,7 +82,7 @@ if (!isset($_SESSION['username'])) {
                           <td><?= $student['Student_ID']; ?></td>
                           <td><?= $student['Student_Lastname']; ?></td>
                           <td><?= $student['Student_Firstname']; ?></td>
-                          <td><?= $student['Student_Program']; ?></td>
+                          <td><?= $student['Program']; ?></td>
                           <td><?= $student['Student_Year_Level']; ?></td>
                           <td><?= $student['Admission_Date']; ?></td>
                           <td><?= $student['Status']; ?></td>

@@ -93,7 +93,7 @@ if (!isset($_SESSION['username'])) {
                       $query = "SELECT 
         student.Student_ID, student.Student_Firstname, student.Student_Lastname, student.Student_Middlename,  student.Admission_Date, student.Status,
         student.Program, academic_history.year, academic_history.Program_Name, academic_history.Scholastic_Status, academic_history.Scholarship_Status,
-        academic_history.GPA
+        academic_history.GPA, student.Student_Year_Level
         FROM student 
         INNER JOIN academic_history ON academic_history.Student_ID=student.Student_ID 
         WHERE student.Student_ID LIKE '$sdata'";
@@ -105,8 +105,8 @@ if (!isset($_SESSION['username'])) {
                           <td><?= $student['Student_ID']; ?></td>
                           <td><?= $student['Student_Lastname']; ?></td>
                           <td><?= $student['Student_Firstname']; ?></td>
-                          <td><?= $student['Program_Name']; ?></td>
-                          <td><?= $student['year']; ?></td>
+                          <td><?= $student['Program']; ?></td>
+                          <td><?= $student['Student_Year_Level']; ?></td>
                           <td><?= $student['Admission_Date']; ?></td>
                           <td><?= $student['Status']; ?></td>
                           <td>
@@ -183,7 +183,7 @@ if (!isset($_SESSION['username'])) {
                       <div class="form-group">
                         <label for="year">Year Level</label>
                         <select class="form-control" id="year" name="year" required>
-                          <option value="<?= $student['year']; ?>"><?= $student['year']; ?></option>
+                          <option value="<?= $student['Student_Year_Level']; ?>"><?= $student['Student_Year_Level']; ?></option>
                           <option value="1st Year">1st Year</option>
                           <option value="2nd Year">2nd Year</option>
                           <option value="3rd Year">3rd Year</option>
@@ -210,28 +210,26 @@ if (!isset($_SESSION['username'])) {
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="scholastic">Scholastic Status</label>
-                        <input type="text" class="form-control" name="scholastic" id="scholastic" value="<?= $student['Scholastic_Status']; ?>" required>
+                        <label for="term">Term</label>
+                        <select type="text" class="form-control" name="term" id="term" required>
+                        <?php 
+                          $query_session = "SELECT * FROM school_session";
+                          $result = $conn->query($query_session);
+                          if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                              echo '<option value="' . $row['Session_ID'] . '">' . $row['Session_Name'] . ' - ' . $row['Term'] . '</option>';
+                            }
+                          } else {
+                            echo '<option value="">Session not available</option>';
+                          }
+                          ?>
+                        </select>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="scholarship">Scholarship Status</label>
-                        <input type="text" class="form-control" name="scholarship" id="scholarship" value="<?= $student['Scholarship_Status']; ?>" required>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="scholastic">Scholastic Status</label>
-                        <input type="text" class="form-control" name="scholastic" id="scholastic" value="<?= $student['Scholastic_Status']; ?>" required>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="scholarship">Scholarship Status</label>
-                        <input type="text" class="form-control" name="scholarship" id="scholarship" value="<?= $student['Scholarship_Status']; ?>" required>
+                        <label for="scholarship">Generate Academic Load</label>
+                        <button type="submit" name="save" class="btn btn-primary"><i class="fas fa-print"></i> Generate</button>
                       </div>
                     </div>
                   </div>
